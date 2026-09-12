@@ -1,0 +1,2763 @@
+{
+  "schema_version": 1,
+  "content_version": "0.10.0",
+  "game_id": "colossal_cave_ru",
+  "start_scene": "road_end",
+  "media": {
+    "scene.road_end": "media/scenes/001_Конец_дороги.jpg",
+    "scene.inside_house": "media/scenes/002_Внутри_дома.jpg",
+    "scene.stream": "media/scenes/003_У_ручья.jpg",
+    "scene.grate": "media/scenes/004_Решётка_у_скал.jpg",
+    "scene.cave_entrance": "media/scenes/005_Вход_в_пещеру.jpg",
+    "scene.first_hall": "media/scenes/006_Первый_подземный_зал.jpg",
+    "scene.grate.open": "media/scenes/004_Решётка_у_скал_открыта.jpg",
+    "scene.first_hall.dark": "media/scenes/006_Первый_подземный_зал_темнота.jpg",
+    "scene.debris_grotto": "media/scenes/007_Грот_обломков.jpg",
+    "scene.bird_grotto": "media/scenes/008_Грот_птицы.jpg",
+    "scene.king_hall": "media/scenes/009_Зал_Горного_Короля.jpg",
+    "scene.debris_grotto.empty": "media/scenes/007_Грот_обломков_без_клетки.jpg",
+    "scene.bird_grotto.empty": "media/scenes/008_Грот_птицы_без_птицы.jpg",
+    "scene.king_hall.open": "media/scenes/009_Зал_Горного_Короля_свободен.jpg",
+    "scene.darkness": "media/scenes/000_Темнота.jpg",
+    "scene.water_gallery": "media/scenes/010_Галерея_над_потоком.jpg",
+    "scene.echo_hall": "media/scenes/011_Зал_эха.jpg",
+    "scene.underground_lake": "media/scenes/012_Подземное_озеро.jpg",
+    "scene.calcite_passage": "media/scenes/013_Кальцитовый_проход.jpg",
+    "scene.silver_grotto": "media/scenes/014_Серебряный_грот.jpg",
+    "scene.silver_grotto.empty": "media/scenes/014.02_Серебряный_грот_без_слитка.jpg",
+    "scene.wind_gallery": "media/scenes/015_Галерея_ветра.jpg",
+    "scene.signs_alcove": "media/scenes/016_Ниша_знаков.jpg",
+    "scene.stone_bells": "media/scenes/017_Зал_каменных_колоколов.jpg",
+    "scene.resonance_gate": "media/scenes/018_Резонансные_ворота.jpg",
+    "scene.high_balcony": "media/scenes/019_Высокий_балкон.jpg",
+    "scene.star_vault": "media/scenes/020_Звёздный_свод.jpg",
+    "scene.resonance_gate.open": "media/scenes/018.03_Резонансные_ворота_открыты.jpg",
+    "scene.stone_bells.empty": "media/scenes/017.04_Зал_каменных_колоколов_без_ударника.jpg",
+    "scene.constellation_stairs": "media/scenes/021_Лестница_созвездий.jpg",
+    "scene.flooded_threshold": "media/scenes/022_Затопленный_порог.jpg",
+    "scene.water_clock": "media/scenes/023_Водяные_часы.jpg",
+    "scene.sluice_room": "media/scenes/024_Старый_водосброс.jpg",
+    "scene.dry_channel": "media/scenes/025_Осушенный_канал.jpg",
+    "scene.keepers_archive": "media/scenes/026_Архив_хранителей.jpg",
+    "scene.flooded_threshold.dry": "media/scenes/022.02_Затопленный_порог_осушен.jpg",
+    "scene.sluice_room.diverted": "media/scenes/024.02_Старый_водосброс_поток_отведён.jpg",
+    "scene.keepers_archive.open": "media/scenes/026.03_Архив_хранителей_дверь_открыта.jpg",
+    "scene.stone_tree.lit": "media/scenes/028.02_Каменное_дерево_знак_освещён.jpg",
+    "scene.stone_tree.open": "media/scenes/028.03_Каменное_дерево_проход_открыт.jpg",
+    "scene.mirror_ledge.aimed": "media/scenes/030.02_Зеркальный_уступ_луч_у_корней.jpg",
+    "scene.root_path": "media/scenes/027_Тропа_каменных_корней.jpg",
+    "scene.stone_tree": "media/scenes/028_Каменное_дерево.jpg",
+    "scene.dew_alcove": "media/scenes/029_Ниша_росы.jpg",
+    "scene.mirror_ledge": "media/scenes/030_Зеркальный_уступ.jpg",
+    "scene.hidden_garden": "media/scenes/031_Сад_под_корнями.jpg",
+    "scene.first_shoot": "media/scenes/032_Павильон_первого_ростка.jpg",
+    "scene.tower_stairs": "media/scenes/033_Лестница_среди_корней.jpg",
+    "scene.eye_tower": "media/scenes/034_Подножие_башни.jpg",
+    "scene.counterweight": "media/scenes/035_Каменный_противовес.jpg",
+    "scene.counterweight.ready": "media/scenes/035_Каменный_противовес_опущен.jpg",
+    "scene.eye_gallery": "media/scenes/036_Галерея_закрытого_Ока.jpg",
+    "scene.eye_gallery.open": "media/scenes/036_Галерея_закрытого_Ока_открыто.jpg",
+    "scene.eye_ring": "media/scenes/037_Верхнее_кольцо.jpg",
+    "scene.valley_terrace": "media/scenes/038_Терраса_над_долиной.jpg",
+    "scene.outer_stairs": "media/scenes/039_Наружная_лестница.jpg",
+    "scene.pine_fork": "media/scenes/040_Развилка_у_сосны.jpg",
+    "scene.trail_shelter": "media/scenes/041_Укрытие_путников.jpg",
+    "scene.white_hollow": "media/scenes/042_Ложбина_белых_камней.jpg",
+    "scene.old_road": "media/scenes/043_Старая_дорога.jpg",
+    "scene.road_house": "media/scenes/044_Дом_у_дороги.jpg"
+  },
+  "scenes": {
+    "road_end": {
+      "media": "scene.road_end",
+      "actions": [
+        {
+          "id": "enter_house",
+          "target": "inside_house"
+        },
+        {
+          "id": "follow_stream",
+          "target": "stream"
+        }
+      ],
+      "step": 1,
+      "text_file": "texts/scenes/001_Конец_дороги.json",
+      "return_media": null
+    },
+    "inside_house": {
+      "media": "scene.inside_house",
+      "actions": [
+        {
+          "id": "store_silver",
+          "type": "event",
+          "visible_if": {
+            "all": [
+              {
+                "op": "has_item",
+                "item": "silver"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode4_complete"
+              }
+            ]
+          },
+          "requires": {
+            "op": "has_item",
+            "item": "silver"
+          },
+          "failure": "no_silver",
+          "effects": {
+            "flag": "episode4_complete",
+            "item_locations": {
+              "silver": "treasury"
+            }
+          },
+          "message": "silver_stored"
+        },
+        {
+          "id": "exit_house",
+          "target": "road_end"
+        }
+      ],
+      "step": 2,
+      "text_file": "texts/scenes/002_Внутри_дома.json",
+      "return_media": null,
+      "variants": [
+        {
+          "id": "002.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode4_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_stored",
+          "inspect_key": "inspect_stored"
+        }
+      ]
+    },
+    "stream": {
+      "media": "scene.stream",
+      "actions": [
+        {
+          "id": "follow_rocks",
+          "target": "grate"
+        },
+        {
+          "id": "return_road",
+          "target": "road_end"
+        }
+      ],
+      "step": 3,
+      "text_file": "texts/scenes/003_У_ручья.json",
+      "return_media": null
+    },
+    "grate": {
+      "step": 4,
+      "media": "scene.grate",
+      "text_file": "texts/scenes/004_Решётка_у_скал.json",
+      "actions": [
+        {
+          "id": "open_grate",
+          "type": "event",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "grate_open"
+          },
+          "requires": {
+            "op": "has_item",
+            "item": "keys"
+          },
+          "failure": "locked",
+          "effects": {
+            "flag": "grate_open"
+          },
+          "message": "opened"
+        },
+        {
+          "id": "enter_cave",
+          "target": "cave_entrance",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "grate_open"
+          },
+          "requires": {
+            "op": "flag_set",
+            "flag": "grate_open"
+          },
+          "failure": "locked"
+        },
+        {
+          "id": "back_stream",
+          "target": "stream"
+        }
+      ],
+      "variants": [
+        {
+          "when": {
+            "op": "flag_set",
+            "flag": "grate_open"
+          },
+          "media": "scene.grate.open",
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "id": "004.02",
+          "return_media": null
+        }
+      ],
+      "return_media": null
+    },
+    "cave_entrance": {
+      "step": 5,
+      "media": "scene.cave_entrance",
+      "text_file": "texts/scenes/005_Вход_в_пещеру.json",
+      "actions": [
+        {
+          "id": "enter_hall",
+          "target": "first_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "first_hall"
+          },
+          "failure": "dark"
+        },
+        {
+          "id": "climb_out",
+          "target": "grate"
+        }
+      ],
+      "return_media": null
+    },
+    "first_hall": {
+      "step": 6,
+      "media": "scene.first_hall",
+      "text_file": "texts/scenes/006_Первый_подземный_зал.json",
+      "actions": [
+        {
+          "id": "read_marks",
+          "type": "event",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "chapter_complete"
+          },
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "chapter_complete"
+          },
+          "message": "discovery"
+        },
+        {
+          "id": "enter_debris",
+          "target": "debris_grotto",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "debris_grotto"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_entrance",
+          "target": "cave_entrance"
+        }
+      ],
+      "dark": true,
+      "variants": [
+        {
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.first_hall.dark",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark",
+          "id": "006.02",
+          "return_media": null
+        }
+      ],
+      "return_media": null
+    },
+    "debris_grotto": {
+      "step": 7,
+      "media": "scene.debris_grotto",
+      "text_file": "texts/scenes/007_Грот_обломков.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_bird_grotto",
+          "target": "bird_grotto",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "bird_grotto"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_first_hall",
+          "target": "first_hall"
+        }
+      ],
+      "variants": [
+        {
+          "when": {
+            "not": {
+              "op": "item_at",
+              "item": "cage",
+              "location": "debris_grotto"
+            }
+          },
+          "media": "scene.debris_grotto.empty",
+          "text_key": "text_empty",
+          "inspect_key": "inspect_empty",
+          "id": "007.02",
+          "return_media": null
+        },
+        {
+          "id": "007.03",
+          "when": {
+            "op": "item_at",
+            "item": "bird",
+            "location": "cage"
+          },
+          "text_key": "text_captured",
+          "inspect_key": "inspect_captured",
+          "buttons_key": "buttons_quiet",
+          "media": null,
+          "return_media": null
+        },
+        {
+          "id": "007.04",
+          "when": {
+            "op": "item_at",
+            "item": "bird",
+            "location": "gone"
+          },
+          "text_key": "text_released",
+          "inspect_key": "inspect_released",
+          "buttons_key": "buttons_quiet",
+          "media": null,
+          "return_media": null
+        },
+        {
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark",
+          "id": "007.05",
+          "buttons_key": "buttons_quiet",
+          "return_media": null
+        }
+      ],
+      "return_media": null
+    },
+    "bird_grotto": {
+      "step": 8,
+      "media": "scene.bird_grotto",
+      "text_file": "texts/scenes/008_Грот_птицы.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "catch_bird",
+          "type": "event",
+          "visible_if": {
+            "op": "item_at",
+            "item": "bird",
+            "location": "bird_grotto"
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "light_here"
+              },
+              {
+                "op": "has_item",
+                "item": "cage"
+              }
+            ]
+          },
+          "failure": "catch_failed",
+          "effects": {
+            "flag": "bird_caught",
+            "item_locations": {
+              "bird": "cage"
+            }
+          },
+          "message": "caught"
+        },
+        {
+          "id": "enter_king_hall",
+          "target": "king_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "king_hall"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_debris",
+          "target": "debris_grotto"
+        }
+      ],
+      "variants": [
+        {
+          "when": {
+            "not": {
+              "op": "item_at",
+              "item": "bird",
+              "location": "bird_grotto"
+            }
+          },
+          "media": "scene.bird_grotto.empty",
+          "text_key": "text_empty",
+          "inspect_key": "inspect_empty",
+          "id": "008.02",
+          "return_media": null
+        },
+        {
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark",
+          "id": "008.03",
+          "return_media": null
+        }
+      ],
+      "return_media": null
+    },
+    "king_hall": {
+      "step": 9,
+      "media": "scene.king_hall",
+      "text_file": "texts/scenes/009_Зал_Горного_Короля.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "release_bird",
+          "type": "event",
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "snake_gone"
+              },
+              {
+                "op": "item_at",
+                "item": "bird",
+                "location": "cage"
+              },
+              {
+                "op": "has_item",
+                "item": "cage"
+              }
+            ]
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "light_here"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "snake_gone"
+              },
+              {
+                "op": "item_at",
+                "item": "bird",
+                "location": "cage"
+              },
+              {
+                "op": "has_item",
+                "item": "cage"
+              }
+            ]
+          },
+          "failure": "release_failed",
+          "effects": {
+            "flag": "snake_gone",
+            "item_locations": {
+              "bird": "gone"
+            }
+          },
+          "message": "snake_fled"
+        },
+        {
+          "id": "cross_hall",
+          "type": "event",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "episode2_complete"
+          },
+          "requires": {
+            "all": [
+              {
+                "op": "light_here"
+              },
+              {
+                "op": "flag_set",
+                "flag": "snake_gone"
+              }
+            ]
+          },
+          "failure": "blocked",
+          "effects": {
+            "flag": "episode2_complete"
+          },
+          "message": "complete"
+        },
+        {
+          "id": "enter_gallery",
+          "target": "water_gallery",
+          "requires": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "episode2_complete"
+              },
+              {
+                "op": "light_or_known_path",
+                "scene": "water_gallery"
+              }
+            ]
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode2_complete"
+          }
+        },
+        {
+          "id": "back_bird",
+          "target": "bird_grotto"
+        }
+      ],
+      "variants": [
+        {
+          "when": {
+            "op": "flag_set",
+            "flag": "snake_gone"
+          },
+          "media": "scene.king_hall.open",
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "id": "009.02",
+          "return_media": null
+        },
+        {
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark",
+          "id": "009.03",
+          "return_media": null
+        }
+      ],
+      "return_media": null
+    },
+    "water_gallery": {
+      "step": 10,
+      "media": "scene.water_gallery",
+      "return_media": null,
+      "text_file": "texts/scenes/010_Галерея_над_потоком.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_echo",
+          "target": "echo_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "echo_hall"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "follow_ledge",
+          "target": "underground_lake",
+          "requires": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "water_path_known"
+              },
+              {
+                "op": "light_or_known_path",
+                "scene": "underground_lake"
+              }
+            ]
+          },
+          "failure": "unknown_path"
+        },
+        {
+          "id": "back_king",
+          "target": "king_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "king_hall"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "010.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "water_path_known"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "010.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "echo_hall": {
+      "step": 11,
+      "media": "scene.echo_hall",
+      "return_media": null,
+      "text_file": "texts/scenes/011_Зал_эха.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "study_ledge",
+          "type": "event",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "water_path_known"
+          },
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "water_path_known"
+          },
+          "message": "discovery"
+        },
+        {
+          "id": "back_gallery",
+          "target": "water_gallery",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "water_gallery"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "011.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "water_path_known"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "011.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "underground_lake": {
+      "step": 12,
+      "media": "scene.underground_lake",
+      "return_media": null,
+      "text_file": "texts/scenes/012_Подземное_озеро.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "study_lake",
+          "type": "event",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "episode3_complete"
+          },
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "episode3_complete"
+          },
+          "message": "complete"
+        },
+        {
+          "id": "enter_calcite",
+          "target": "calcite_passage",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "calcite_passage"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode3_complete"
+          }
+        },
+        {
+          "id": "back_gallery",
+          "target": "water_gallery",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "water_gallery"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_archive",
+          "target": "keepers_archive",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "keepers_archive"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "archive_shortcut"
+          }
+        },
+        {
+          "id": "enter_roots",
+          "target": "root_path",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "root_path"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode6_complete"
+          }
+        }
+      ],
+      "variants": [
+        {
+          "id": "012.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode3_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "012.10",
+          "when": {
+            "op": "flag_set",
+            "flag": "archive_shortcut"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_archive",
+          "inspect_key": "inspect_archive"
+        },
+        {
+          "id": "012.11",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode6_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_roots",
+          "inspect_key": "inspect_roots",
+          "hints_key": "hints_roots"
+        },
+        {
+          "id": "012.12",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "episode6_complete"
+              },
+              {
+                "op": "flag_set",
+                "flag": "archive_shortcut"
+              }
+            ]
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_roots_archive",
+          "inspect_key": "inspect_roots"
+        },
+        {
+          "id": "012.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "calcite_passage": {
+      "step": 13,
+      "media": "scene.calcite_passage",
+      "return_media": null,
+      "text_file": "texts/scenes/013_Кальцитовый_проход.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_silver",
+          "target": "silver_grotto",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "silver_grotto"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_wind",
+          "target": "wind_gallery",
+          "requires": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "episode4_complete"
+              },
+              {
+                "op": "light_or_known_path",
+                "scene": "wind_gallery"
+              }
+            ]
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode4_complete"
+          }
+        },
+        {
+          "id": "back_lake",
+          "target": "underground_lake",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "underground_lake"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "013.03",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode4_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_expedition",
+          "inspect_key": "inspect_expedition"
+        },
+        {
+          "id": "013.02",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "silver_grotto": {
+      "step": 14,
+      "media": "scene.silver_grotto",
+      "return_media": null,
+      "text_file": "texts/scenes/014_Серебряный_грот.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "back_calcite",
+          "target": "calcite_passage",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "calcite_passage"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "014.02",
+          "when": {
+            "not": {
+              "op": "item_at",
+              "item": "silver",
+              "location": "silver_grotto"
+            }
+          },
+          "media": "scene.silver_grotto.empty",
+          "return_media": null,
+          "text_key": "text_empty",
+          "inspect_key": "inspect_empty"
+        },
+        {
+          "id": "014.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "wind_gallery": {
+      "step": 15,
+      "media": "scene.wind_gallery",
+      "return_media": null,
+      "text_file": "texts/scenes/015_Галерея_ветра.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_signs",
+          "target": "signs_alcove",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "signs_alcove"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_bells",
+          "target": "stone_bells",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "stone_bells"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "climb_shortcut",
+          "target": "high_balcony",
+          "requires": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "wind_shortcut"
+              },
+              {
+                "op": "light_or_known_path",
+                "scene": "high_balcony"
+              }
+            ]
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "wind_shortcut"
+          }
+        },
+        {
+          "id": "back_calcite",
+          "target": "calcite_passage",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "calcite_passage"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "015.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "wind_shortcut"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "015.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "signs_alcove": {
+      "step": 16,
+      "media": "scene.signs_alcove",
+      "return_media": null,
+      "text_file": "texts/scenes/016_Ниша_знаков.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "read_signs",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "bell_signs_read"
+          },
+          "message": "read",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "bell_signs_read"
+          }
+        },
+        {
+          "id": "back_wind",
+          "target": "wind_gallery",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "wind_gallery"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "016.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "bell_signs_read"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "016.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "stone_bells": {
+      "step": 17,
+      "media": "scene.stone_bells",
+      "return_media": null,
+      "text_file": "texts/scenes/017_Зал_каменных_колоколов.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "take_striker",
+          "type": "event",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "striker_taken"
+          },
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "striker_taken"
+          },
+          "message": "striker_taken"
+        },
+        {
+          "id": "try_bells",
+          "type": "event",
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "striker_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "bell_lock_released"
+              }
+            ]
+          },
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "no_striker"
+        },
+        {
+          "id": "ring_correct",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "bell_lock_released"
+          },
+          "message": "correct",
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "bell_lock_released"
+              },
+              {
+                "op": "flag_set",
+                "flag": "striker_taken"
+              }
+            ]
+          }
+        },
+        {
+          "id": "ring_wrong",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "wrong",
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "bell_lock_released"
+              },
+              {
+                "op": "flag_set",
+                "flag": "striker_taken"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_gate",
+          "target": "resonance_gate",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "resonance_gate"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_wind",
+          "target": "wind_gallery",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "wind_gallery"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "017.04",
+          "when": {
+            "op": "flag_set",
+            "flag": "striker_taken"
+          },
+          "media": "scene.stone_bells.empty",
+          "return_media": null,
+          "text_key": "text_taken",
+          "inspect_key": "inspect_taken"
+        },
+        {
+          "id": "017.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "bell_lock_released"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "017.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "resonance_gate": {
+      "step": 18,
+      "media": "scene.resonance_gate",
+      "return_media": null,
+      "text_file": "texts/scenes/018_Резонансные_ворота.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "open_gate",
+          "type": "event",
+          "requires": {
+            "all": [
+              {
+                "op": "light_here"
+              },
+              {
+                "op": "flag_set",
+                "flag": "bell_lock_released"
+              }
+            ]
+          },
+          "failure": "locked",
+          "effects": {
+            "flag": "resonance_gate_open"
+          },
+          "message": "opened",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "resonance_gate_open"
+          }
+        },
+        {
+          "id": "enter_balcony",
+          "target": "high_balcony",
+          "requires": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "resonance_gate_open"
+              },
+              {
+                "op": "light_or_known_path",
+                "scene": "high_balcony"
+              }
+            ]
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "resonance_gate_open"
+          }
+        },
+        {
+          "id": "back_bells",
+          "target": "stone_bells",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "stone_bells"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "018.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "bell_lock_released"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_unlocked",
+          "inspect_key": "inspect_unlocked",
+          "hints_key": "hints_unlocked"
+        },
+        {
+          "id": "018.03",
+          "when": {
+            "op": "flag_set",
+            "flag": "resonance_gate_open"
+          },
+          "media": "scene.resonance_gate.open",
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "018.04",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "high_balcony": {
+      "step": 19,
+      "media": "scene.high_balcony",
+      "return_media": null,
+      "text_file": "texts/scenes/019_Высокий_балкон.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_constellation",
+          "target": "constellation_stairs",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "constellation_stairs"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode5_complete"
+          }
+        },
+        {
+          "id": "trace_stairs",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "wind_shortcut"
+          },
+          "message": "shortcut",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "wind_shortcut"
+          }
+        },
+        {
+          "id": "descend_shortcut",
+          "target": "wind_gallery",
+          "requires": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "wind_shortcut"
+              },
+              {
+                "op": "light_or_known_path",
+                "scene": "wind_gallery"
+              }
+            ]
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "wind_shortcut"
+          }
+        },
+        {
+          "id": "enter_stars",
+          "target": "star_vault",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "star_vault"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_gate",
+          "target": "resonance_gate",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "resonance_gate"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "019.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "wind_shortcut"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "019.04",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode5_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_map",
+          "inspect_key": "inspect_map",
+          "hints_key": "hints_map"
+        },
+        {
+          "id": "019.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "star_vault": {
+      "step": 20,
+      "media": "scene.star_vault",
+      "return_media": null,
+      "text_file": "texts/scenes/020_Звёздный_свод.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "back_balcony",
+          "target": "high_balcony",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "high_balcony"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "020.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode5_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "020.03",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode5_complete",
+        "message": "complete"
+      }
+    },
+    "constellation_stairs": {
+      "step": 21,
+      "media": "scene.constellation_stairs",
+      "return_media": null,
+      "text_file": "texts/scenes/021_Лестница_созвездий.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "descend_water",
+          "target": "flooded_threshold",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "flooded_threshold"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_balcony",
+          "target": "high_balcony",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "high_balcony"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "021.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "flooded_threshold": {
+      "step": 22,
+      "media": "scene.flooded_threshold",
+      "return_media": null,
+      "text_file": "texts/scenes/022_Затопленный_порог.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_clock",
+          "target": "water_clock",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "water_clock"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_sluice",
+          "target": "sluice_room",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "sluice_room"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "try_descent",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "flooded",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "water_diverted"
+          }
+        },
+        {
+          "id": "enter_channel",
+          "target": "dry_channel",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "dry_channel"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "water_diverted"
+          }
+        },
+        {
+          "id": "back_stairs",
+          "target": "constellation_stairs",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "constellation_stairs"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "022.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "water_diverted"
+          },
+          "media": "scene.flooded_threshold.dry",
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "022.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "water_clock": {
+      "step": 23,
+      "media": "scene.water_clock",
+      "return_media": null,
+      "text_file": "texts/scenes/023_Водяные_часы.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "back_threshold",
+          "target": "flooded_threshold",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "flooded_threshold"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "023.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "water_signs_read"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "023.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "water_signs_read",
+        "message": "read"
+      }
+    },
+    "sluice_room": {
+      "step": 24,
+      "media": "scene.sluice_room",
+      "return_media": null,
+      "text_file": "texts/scenes/024_Старый_водосброс.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "divert_water",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "water_diverted"
+          },
+          "message": "diverted",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "water_diverted"
+          }
+        },
+        {
+          "id": "keep_flow",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "wrong",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "water_diverted"
+          }
+        },
+        {
+          "id": "back_threshold",
+          "target": "flooded_threshold",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "flooded_threshold"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "024.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "water_diverted"
+          },
+          "media": "scene.sluice_room.diverted",
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "024.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "dry_channel": {
+      "step": 25,
+      "media": "scene.dry_channel",
+      "return_media": null,
+      "text_file": "texts/scenes/025_Осушенный_канал.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_archive",
+          "target": "keepers_archive",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "keepers_archive"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_threshold",
+          "target": "flooded_threshold",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "flooded_threshold"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "025.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "keepers_archive": {
+      "step": 26,
+      "media": "scene.keepers_archive",
+      "return_media": null,
+      "text_file": "texts/scenes/026_Архив_хранителей.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "read_archive",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "episode6_complete"
+          },
+          "message": "complete",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "episode6_complete"
+          }
+        },
+        {
+          "id": "open_lake_shortcut",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "archive_shortcut"
+          },
+          "message": "shortcut",
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "archive_shortcut"
+          }
+        },
+        {
+          "id": "enter_lake",
+          "target": "underground_lake",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "underground_lake"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "archive_shortcut"
+          }
+        },
+        {
+          "id": "back_channel",
+          "target": "dry_channel",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "dry_channel"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "026.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode6_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "026.03",
+          "when": {
+            "op": "flag_set",
+            "flag": "archive_shortcut"
+          },
+          "media": "scene.keepers_archive.open",
+          "return_media": null,
+          "text_key": "text_shortcut",
+          "inspect_key": "inspect_shortcut"
+        },
+        {
+          "id": "026.04",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "episode6_complete"
+              },
+              {
+                "op": "flag_set",
+                "flag": "archive_shortcut"
+              }
+            ]
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_done_shortcut",
+          "inspect_key": "inspect_shortcut"
+        },
+        {
+          "id": "026.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "root_path": {
+      "step": 27,
+      "media": "scene.root_path",
+      "return_media": null,
+      "text_file": "texts/scenes/027_Тропа_каменных_корней.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_tree",
+          "target": "stone_tree",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "stone_tree"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_lake",
+          "target": "underground_lake",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "underground_lake"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "027.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "stone_tree": {
+      "step": 28,
+      "media": "scene.stone_tree",
+      "return_media": null,
+      "text_file": "texts/scenes/028_Каменное_дерево.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_dew",
+          "target": "dew_alcove",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "dew_alcove"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_mirror",
+          "target": "mirror_ledge",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "mirror_ledge"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "try_leaf",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "locked",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "root_beam"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_gate_open"
+              }
+            ]
+          }
+        },
+        {
+          "id": "press_leaf",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "garden_gate_open"
+          },
+          "message": "opened",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "root_beam"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_gate_open"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_garden",
+          "target": "hidden_garden",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "hidden_garden"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "garden_gate_open"
+          }
+        },
+        {
+          "id": "back_roots",
+          "target": "root_path",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "root_path"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "028.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "root_beam"
+          },
+          "media": "scene.stone_tree.lit",
+          "return_media": null,
+          "text_key": "text_lit",
+          "inspect_key": "inspect_lit"
+        },
+        {
+          "id": "028.03",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_gate_open"
+          },
+          "media": "scene.stone_tree.open",
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "028.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "dew_alcove": {
+      "step": 29,
+      "media": "scene.dew_alcove",
+      "return_media": null,
+      "text_file": "texts/scenes/029_Ниша_росы.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "back_tree",
+          "target": "stone_tree",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "stone_tree"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "029.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "root_signs_read",
+        "message": "discovery"
+      }
+    },
+    "mirror_ledge": {
+      "step": 30,
+      "media": "scene.mirror_ledge",
+      "return_media": null,
+      "text_file": "texts/scenes/030_Зеркальный_уступ.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "aim_roots",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "root_beam"
+          },
+          "message": "aimed",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "root_beam"
+          }
+        },
+        {
+          "id": "aim_crown",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "wrong",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "root_beam"
+          }
+        },
+        {
+          "id": "back_tree",
+          "target": "stone_tree",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "stone_tree"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "030.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "root_beam"
+          },
+          "media": "scene.mirror_ledge.aimed",
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "030.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "hidden_garden": {
+      "step": 31,
+      "media": "scene.hidden_garden",
+      "return_media": null,
+      "text_file": "texts/scenes/031_Сад_под_корнями.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_pavilion",
+          "target": "first_shoot",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "first_shoot"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_tower_stairs",
+          "target": "tower_stairs",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "tower_stairs"
+          },
+          "failure": "dark_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode7_complete"
+          }
+        },
+        {
+          "id": "back_tree",
+          "target": "stone_tree",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "stone_tree"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "031.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode7_complete"
+          },
+          "text_key": "text_tower",
+          "hints_key": "hints_tower"
+        },
+        {
+          "id": "031.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "first_shoot": {
+      "step": 32,
+      "media": "scene.first_shoot",
+      "return_media": null,
+      "text_file": "texts/scenes/032_Павильон_первого_ростка.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "back_garden",
+          "target": "hidden_garden",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "hidden_garden"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "032.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode7_complete"
+          },
+          "media": null,
+          "return_media": null,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "032.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "return_media": null,
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode7_complete",
+        "message": "discovery"
+      }
+    },
+    "tower_stairs": {
+      "step": 33,
+      "media": "scene.tower_stairs",
+      "return_media": null,
+      "text_file": "texts/scenes/033_Лестница_среди_корней.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "climb_tower",
+          "target": "eye_tower",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "eye_tower"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_garden",
+          "target": "hidden_garden",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "hidden_garden"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "033.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "eye_tower": {
+      "step": 34,
+      "media": "scene.eye_tower",
+      "return_media": null,
+      "text_file": "texts/scenes/034_Подножие_башни.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_weight",
+          "target": "counterweight",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "counterweight"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "climb_gallery",
+          "target": "eye_gallery",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "eye_gallery"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_stairs",
+          "target": "tower_stairs",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "tower_stairs"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "034.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "counterweight": {
+      "step": 35,
+      "media": "scene.counterweight",
+      "return_media": null,
+      "text_file": "texts/scenes/035_Каменный_противовес.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "lower_weight",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {
+            "flag": "tower_weight_ready"
+          },
+          "message": "lowered",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "tower_weight_ready"
+          }
+        },
+        {
+          "id": "raise_weight",
+          "type": "event",
+          "requires": {
+            "op": "light_here"
+          },
+          "failure": "dark",
+          "effects": {},
+          "message": "wrong",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "tower_weight_ready"
+          }
+        },
+        {
+          "id": "back_tower",
+          "target": "eye_tower",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "eye_tower"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "035.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "tower_weight_ready"
+          },
+          "media": "scene.counterweight.ready",
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "035.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "tower_signs_read",
+        "message": "discovery"
+      }
+    },
+    "eye_gallery": {
+      "step": 36,
+      "media": "scene.eye_gallery",
+      "return_media": null,
+      "text_file": "texts/scenes/036_Галерея_закрытого_Ока.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "turn_winch",
+          "type": "event",
+          "requires": {
+            "all": [
+              {
+                "op": "light_here"
+              },
+              {
+                "op": "flag_set",
+                "flag": "tower_weight_ready"
+              }
+            ]
+          },
+          "failure": "blocked",
+          "effects": {
+            "flag": "tower_eye_open"
+          },
+          "message": "opened",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "tower_eye_open"
+          }
+        },
+        {
+          "id": "climb_eye",
+          "target": "eye_ring",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "tower_eye_open"
+          }
+        },
+        {
+          "id": "back_tower",
+          "target": "eye_tower",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "eye_tower"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "036.99",
+          "when": {
+            "all": [
+              {
+                "op": "no_light_here"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "tower_eye_open"
+              }
+            ]
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        },
+        {
+          "id": "036.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "tower_eye_open"
+          },
+          "media": "scene.eye_gallery.open",
+          "daylight": true,
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ]
+    },
+    "eye_ring": {
+      "step": 37,
+      "media": "scene.eye_ring",
+      "return_media": null,
+      "text_file": "texts/scenes/037_Верхнее_кольцо.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "climb_terrace",
+          "target": "valley_terrace"
+        },
+        {
+          "id": "descend_outer",
+          "target": "outer_stairs",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode8_complete"
+          }
+        },
+        {
+          "id": "back_gallery",
+          "target": "eye_gallery"
+        }
+      ],
+      "variants": [
+        {
+          "id": "037.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode8_complete"
+          },
+          "text_key": "text_road",
+          "inspect_key": "inspect_road",
+          "hints_key": "hints_road"
+        }
+      ]
+    },
+    "valley_terrace": {
+      "step": 38,
+      "media": "scene.valley_terrace",
+      "return_media": null,
+      "text_file": "texts/scenes/038_Терраса_над_долиной.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_ring",
+          "target": "eye_ring"
+        }
+      ],
+      "variants": [
+        {
+          "id": "038.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode8_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode8_complete",
+        "message": "discovery"
+      }
+    },
+    "outer_stairs": {
+      "step": 39,
+      "media": "scene.outer_stairs",
+      "return_media": null,
+      "text_file": "texts/scenes/039_Наружная_лестница.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "descend_fork",
+          "target": "pine_fork"
+        },
+        {
+          "id": "back_ring",
+          "target": "eye_ring"
+        }
+      ],
+      "variants": []
+    },
+    "pine_fork": {
+      "step": 40,
+      "media": "scene.pine_fork",
+      "return_media": null,
+      "text_file": "texts/scenes/040_Развилка_у_сосны.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "scout_pine",
+          "type": "event",
+          "effects": {},
+          "message": "wrong",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "valley_path_found"
+          }
+        },
+        {
+          "id": "scout_stones",
+          "type": "event",
+          "effects": {
+            "flag": "valley_path_found"
+          },
+          "message": "found",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "valley_path_found"
+          }
+        },
+        {
+          "id": "descend_stones",
+          "target": "white_hollow",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "valley_path_found"
+          }
+        },
+        {
+          "id": "enter_shelter",
+          "target": "trail_shelter"
+        },
+        {
+          "id": "back_stairs",
+          "target": "outer_stairs"
+        }
+      ],
+      "variants": [
+        {
+          "id": "040.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "valley_path_found"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ]
+    },
+    "trail_shelter": {
+      "step": 41,
+      "media": "scene.trail_shelter",
+      "return_media": null,
+      "text_file": "texts/scenes/041_Укрытие_путников.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_fork",
+          "target": "pine_fork"
+        }
+      ],
+      "variants": [
+        {
+          "id": "041.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "valley_signs_read"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "valley_signs_read",
+        "message": "discovery"
+      }
+    },
+    "white_hollow": {
+      "step": 42,
+      "media": "scene.white_hollow",
+      "return_media": null,
+      "text_file": "texts/scenes/042_Ложбина_белых_камней.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "descend_road",
+          "target": "old_road"
+        },
+        {
+          "id": "back_fork",
+          "target": "pine_fork"
+        }
+      ],
+      "variants": []
+    },
+    "old_road": {
+      "step": 43,
+      "media": "scene.old_road",
+      "return_media": null,
+      "text_file": "texts/scenes/043_Старая_дорога.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_wayhouse",
+          "target": "road_house"
+        },
+        {
+          "id": "back_hollow",
+          "target": "white_hollow"
+        }
+      ],
+      "variants": []
+    },
+    "road_house": {
+      "step": 44,
+      "media": "scene.road_house",
+      "return_media": null,
+      "text_file": "texts/scenes/044_Дом_у_дороги.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_road",
+          "target": "old_road"
+        }
+      ],
+      "variants": [
+        {
+          "id": "044.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode9_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode9_complete",
+        "message": "discovery"
+      }
+    }
+  },
+  "copy_files": {
+    "interface": "texts/interface/000_Экраны_и_кнопки.json",
+    "events": "texts/events/002_Лампа_и_дневник.json",
+    "keys": "texts/items/002_Связка_ключей.json",
+    "cage": "texts/items/007_Клетка_для_птицы.json",
+    "silver": "texts/items/014_Серебряный_слиток.json"
+  }
+}

@@ -1,0 +1,17 @@
+# Текущая иллюстрация 017
+
+Последняя правка: добавлен ударник на подставке. Встроенный imagegen; PNG преобразован в JPEG. Предыдущее изображение без ударника сохранено как `scenes/017.04_Зал_каменных_колоколов_без_ударника.jpg` для состояния после подбора.
+
+Edit this illustration. Preserve exactly the three classical bells LARGE SMALL LARGE with delicate elven engraving, their positions, cave, right passage and amber/teal lighting. Add one clearly visible portable bell mallet resting diagonally on a low rough stone pedestal in the lower-left foreground. It has a long slender wooden handle and a compact transverse cylindrical wooden head wrapped in worn leather, elegant practical ancient tool, not a weapon. Entire tool visible, naturally illuminated, reachable from the floor, not hanging between bells. Keep bells unobstructed. Painterly fantasy game art, landscape 16:9, no people, captions or UI.
+
+Финальная правка: большой — маленький — большой, классическая форма и эльфийская вязь сохранены. Встроенный imagegen, затем преобразование PNG в JPEG.
+
+Промпт финальной правки:
+
+Edit target: the provided cave illustration with three classic bells. Make ONLY this specific change: shrink the MIDDLE bell to 60 percent of its present width and height, keeping its classic curved church-bell proportions. Left and right bells remain equally LARGE, identical to their current size. The resulting left-to-right sequence must clearly read LARGE — SMALL — LARGE at the same depth, not a perspective effect. Keep the three suspension attachment points at the current height; the smaller middle bell's lower rim will naturally be higher. Preserve exactly the classic rounded crowns, concave curved waists, circular flared lips, hollow mouths, weathered material and subtle engraved elven calligraphy on all three bells. Preserve chains, cave, camera, composition, right-hand passage, warm amber lighting and blue-green shadows. No additional objects, no separate hanging striker, no text or UI. Landscape 16:9.
+
+## Предыдущая генерация
+
+Заменяет прежний вариант из PROMPTS_015_020.md. Создано встроенным imagegen; PNG преобразован в JPEG без изменения композиции. Файл: `scenes/017_Зал_каменных_колоколов.jpg`.
+
+Edit this fantasy cave game illustration. Preserve the detailed painterly limestone cavern style, muted blue-green shadows, warm amber lamplight, dry stone floor and passage at right. Completely replace the two angular objects and wooden lever with EXACTLY THREE IDENTICAL CLASSIC BELLS IN ONE STRAIGHT HORIZONTAL ROW. All three bells must have precisely the same size, shape, height and spacing, at the same depth, facing the viewer. Elegant traditional church-bell silhouette: small rounded crown, graceful smoothly curving concave waist, broad circular flared lip and hollow mouth. Weathered smooth grey stone with a subtle aged bronze patina, beautifully crafted and unmistakably classic bells, not trapezoids or slabs. Each hangs from a short dark chain attached to one ancient beam high above. On each bell a narrow band of mysterious barely visible elven calligraphy, delicate flowing engraved strokes worn by centuries, subtle tone-on-tone, NOT bright or glowing. Remove the entire horizontal lever, its pedestal and all previous bell supports. Clear floor under the three bells. No separate central dangling striker. Beautiful harmonious composition with three equal bells as the focal subject across the central-left part of the cave, right passage remains visible. Landscape 16:9. No people, no interface, no captions, no watermarks.
