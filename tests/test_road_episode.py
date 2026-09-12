@@ -45,7 +45,7 @@ def test_full_daylight_route_and_return(content,tmp_path):
     apply(s,'ui:inspect',c)
     assert s.journal==journal
     apply(s,'ui:progress',c)
-    assert c['copy']['interface']['Девятая_цель_выполнена'] in render(s,c).caption
+    assert c['copy']['interface']['Десятая_цель'] in render(s,c).caption
     repo=Repository(tmp_path/'road.sqlite3');repo.save(1,s);s=repo.get(1)
     assert s.flags['episode9_complete']
     play(s,c,'ui:scene','move:back_road','move:back_hollow','move:back_fork','move:back_stairs','move:back_ring','move:back_gallery')
@@ -66,7 +66,7 @@ def test_090_save_upgrade_preserves_state(content,tmp_path):
     repo=Repository(tmp_path/'old.sqlite3')
     with repo.connect() as db:db.execute('INSERT INTO saves VALUES (?,?)',(1,json.dumps(old)))
     restored=repo.get(1)
-    assert restored.content_version=='0.10.0'
+    assert restored.content_version=='0.11.0'
     comparison=asdict(restored);comparison['content_version']='0.9.0'
     assert comparison==old
 

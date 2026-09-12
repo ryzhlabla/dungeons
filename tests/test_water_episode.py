@@ -69,7 +69,7 @@ def test_old_finished_save_can_continue(tmp_path):
     with repository.connect() as db:
         db.execute('INSERT INTO saves VALUES (?, ?)', (1, json.dumps(data)))
     restored = repository.get(1)
-    assert restored.content_version == '0.10.0'
+    assert restored.content_version == '0.11.0'
     apply(restored, 'move:enter_gallery', load_content())
     assert restored.scene == 'water_gallery' and restored.item_locations['bird'] == 'gone'
 

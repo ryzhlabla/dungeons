@@ -187,6 +187,8 @@ def render(state, content):
             goal = "Восьмая_цель_выполнена" if state.flags.get("episode8_complete") else "Восьмая_цель"
         if state.flags.get("episode8_complete"):
             goal = "Девятая_цель_выполнена" if state.flags.get("episode9_complete") else "Девятая_цель"
+        if state.flags.get("episode9_complete"):
+            goal = "Десятая_цель_выполнена" if state.flags.get("episode10_complete") else "Десятая_цель"
         text += "\n\n" + content["copy"]["interface"][goal]
         text += "\n\n" + content["copy"]["silver"]["progress"].format(found=int(bool(state.flags.get("silver_found"))), stored=int(bool(state.flags.get("episode4_complete"))))
         back("ui:menu", content["copy"]["interface"]["Меню"])

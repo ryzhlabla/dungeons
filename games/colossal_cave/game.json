@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "0.10.0",
+  "content_version": "0.11.0",
   "game_id": "colossal_cave_ru",
   "start_scene": "road_end",
   "media": {
@@ -64,7 +64,13 @@
     "scene.trail_shelter": "media/scenes/041_Укрытие_путников.jpg",
     "scene.white_hollow": "media/scenes/042_Ложбина_белых_камней.jpg",
     "scene.old_road": "media/scenes/043_Старая_дорога.jpg",
-    "scene.road_house": "media/scenes/044_Дом_у_дороги.jpg"
+    "scene.road_house": "media/scenes/044_Дом_у_дороги.jpg",
+    "scene.reed_path": "media/scenes/045_Тропа_в_камышах.jpg",
+    "scene.near_landing": "media/scenes/046_Ближняя_пристань.jpg",
+    "scene.ferry_house": "media/scenes/047_Домик_перевозчика.jpg",
+    "scene.far_landing": "media/scenes/048_Дальняя_пристань.jpg",
+    "scene.twin_towers": "media/scenes/049_Две_сторожевые_башни.jpg",
+    "scene.seed_court": "media/scenes/050_Семенной_двор.jpg"
   },
   "scenes": {
     "road_end": {
@@ -2717,11 +2723,29 @@
           "target": "road_house"
         },
         {
+          "id": "enter_reeds",
+          "target": "reed_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode9_complete"
+          }
+        },
+        {
           "id": "back_hollow",
           "target": "white_hollow"
         }
       ],
-      "variants": []
+      "variants": [
+        {
+          "id": "043.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode9_complete"
+          },
+          "text_key": "text_ferry",
+          "hints_key": "hints_ferry"
+        }
+      ]
     },
     "road_house": {
       "step": 44,
@@ -2749,6 +2773,210 @@
       ],
       "inspect_discovery": {
         "flag": "episode9_complete",
+        "message": "discovery"
+      }
+    },
+    "reed_path": {
+      "step": 45,
+      "media": "scene.reed_path",
+      "return_media": null,
+      "text_file": "texts/scenes/045_Тропа_в_камышах.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_landing",
+          "target": "near_landing"
+        },
+        {
+          "id": "back_road",
+          "target": "old_road"
+        }
+      ],
+      "variants": []
+    },
+    "near_landing": {
+      "step": 46,
+      "media": "scene.near_landing",
+      "return_media": null,
+      "text_file": "texts/scenes/046_Ближняя_пристань.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "try_cross",
+          "type": "event",
+          "effects": {},
+          "message": "blocked",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "ferry_released"
+          }
+        },
+        {
+          "id": "cross_river",
+          "target": "far_landing",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "ferry_released"
+          }
+        },
+        {
+          "id": "enter_house",
+          "target": "ferry_house"
+        },
+        {
+          "id": "back_reeds",
+          "target": "reed_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "046.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "ferry_released"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ]
+    },
+    "ferry_house": {
+      "step": 47,
+      "media": "scene.ferry_house",
+      "return_media": null,
+      "text_file": "texts/scenes/047_Домик_перевозчика.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "lift_stop",
+          "type": "event",
+          "effects": {
+            "flag": "ferry_released"
+          },
+          "message": "released",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "ferry_brake_seen"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "ferry_released"
+              }
+            ]
+          }
+        },
+        {
+          "id": "press_stop",
+          "type": "event",
+          "effects": {},
+          "message": "wrong",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "ferry_brake_seen"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "ferry_released"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_landing",
+          "target": "near_landing"
+        }
+      ],
+      "variants": [
+        {
+          "id": "047.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "ferry_released"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "ferry_brake_seen",
+        "message": "discovery"
+      }
+    },
+    "far_landing": {
+      "step": 48,
+      "media": "scene.far_landing",
+      "return_media": null,
+      "text_file": "texts/scenes/048_Дальняя_пристань.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_towers",
+          "target": "twin_towers"
+        },
+        {
+          "id": "cross_back",
+          "target": "near_landing",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "ferry_released"
+          }
+        }
+      ],
+      "variants": []
+    },
+    "twin_towers": {
+      "step": 49,
+      "media": "scene.twin_towers",
+      "return_media": null,
+      "text_file": "texts/scenes/049_Две_сторожевые_башни.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_court",
+          "target": "seed_court"
+        },
+        {
+          "id": "back_landing",
+          "target": "far_landing"
+        }
+      ],
+      "variants": []
+    },
+    "seed_court": {
+      "step": 50,
+      "media": "scene.seed_court",
+      "return_media": null,
+      "text_file": "texts/scenes/050_Семенной_двор.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_towers",
+          "target": "twin_towers"
+        }
+      ],
+      "variants": [
+        {
+          "id": "050.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode10_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode10_complete",
         "message": "discovery"
       }
     }

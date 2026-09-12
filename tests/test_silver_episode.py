@@ -64,7 +64,7 @@ def test_04_save_upgrade(tmp_path):
     old['content_version']='0.4.0'; old['item_locations'].pop('silver')
     with repo.connect() as db: db.execute('INSERT INTO saves VALUES (?,?)',(1,json.dumps(old)))
     s=repo.get(1)
-    assert s.content_version=='0.10.0' and s.item_locations['silver']=='silver_grotto'
+    assert s.content_version=='0.11.0' and s.item_locations['silver']=='silver_grotto'
     assert s.flags==old['flags'] and s.scene==old['scene']
 
 

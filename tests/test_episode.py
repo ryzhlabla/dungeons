@@ -94,7 +94,7 @@ def test_old_save_migrates_without_reset(tmp_path):
     with repo.connect() as db:
         db.execute("INSERT INTO saves VALUES (?, ?)",(42,json.dumps(old)))
     loaded=repo.get(42)
-    assert loaded.content_version=="0.10.0"
+    assert loaded.content_version=="0.11.0"
     assert loaded.scene=="stream" and loaded.turns==17
     assert loaded.item_locations=={"lamp":"inventory","keys":"inside_house","cage":"debris_grotto","bird":"bird_grotto","silver":"silver_grotto"}
     assert loaded.item_states["lamp"]["power"]
@@ -105,7 +105,7 @@ def test_old_save_migrates_without_reset(tmp_path):
 
 def test_numbered_text_and_variant_images_are_linked():
     c=load_content()
-    assert sorted(s["step"] for s in c["scenes"].values())==list(range(1,45))
+    assert sorted(s["step"] for s in c["scenes"].values())==list(range(1,51))
     s,c=prepared()
     play(s,c,"event:open_grate")
     assert render(s,c).asset=="scene.grate.open"

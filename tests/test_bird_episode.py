@@ -111,7 +111,7 @@ def test_existing_saves_add_cage_without_losing_progress(tmp_path, version):
     with repo.connect() as db:
         db.execute("INSERT INTO saves VALUES (?, ?)", (1, json.dumps(old)))
     s = repo.get(1)
-    assert s.content_version == "0.10.0"
+    assert s.content_version == "0.11.0"
     assert s.scene == "first_hall" and s.turns == 42
     assert s.flags == old["flags"]
     assert s.item_locations["keys"] == "grate"

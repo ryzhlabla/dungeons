@@ -53,7 +53,7 @@ def test_full_route_gates_daylight_save_rewind(tmp_path):
     repo = Repository(tmp_path/'tower.sqlite3')
     repo.save(1,s)
     restored = repo.get(1)
-    assert restored.flags == s.flags and restored.content_version == '0.10.0'
+    assert restored.flags == s.flags and restored.content_version == '0.11.0'
     play(s,c,'ui:scene','move:back_ring','move:back_gallery')
     assert s.returning and scene_view(s,c)['media'] == 'scene.eye_gallery.open'
     assert not scene_view(s,c)['dark']
