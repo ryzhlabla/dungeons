@@ -55,7 +55,7 @@ def test_sprouts_before_route_and_save(content,tmp_path):
     repo=Repository(tmp_path/'return.sqlite3');repo.save(1,s);s=repo.get(1)
     assert s.flags['episode12_complete'] and s.flags['seedlings_verified']
     apply(s,'ui:progress',c)
-    assert c['copy']['interface']['Двенадцатая_цель_выполнена'] in render(s,c).caption
+    assert c['copy']['interface']['Тринадцатая_цель'] in render(s,c).caption
     rolled=rewind_star(asdict(s),c)
     assert not set(SCENES).intersection(rolled['visited'])
     assert not any(rolled['flags'].get(f) for f in ('watcher_notes_read','seedlings_ready','seedlings_verified','return_path_known','episode12_complete'))

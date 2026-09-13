@@ -83,7 +83,16 @@
     "scene.boundary_stone": "media/scenes/060_Межевой_камень.jpg",
     "scene.dry_pass": "media/scenes/061_Сухой_перевал.jpg",
     "scene.forest_waymark": "media/scenes/062_Веха_над_лесом.jpg",
-    "scene.light_chamber.sprouts": "media/scenes/056_Световая_камера_всходы.jpg"
+    "scene.light_chamber.sprouts": "media/scenes/056_Световая_камера_всходы.jpg",
+    "scene.valley_descent": "media/scenes/063_Спуск_в_долину.jpg",
+    "scene.abandoned_beds": "media/scenes/064_Заброшенные_гряды.jpg",
+    "scene.hazel_edge": "media/scenes/065_Орешниковый_край.jpg",
+    "scene.overgrown_spring": "media/scenes/066_Заросший_родник.jpg",
+    "scene.stone_watercourse": "media/scenes/067_Каменный_водовод.jpg",
+    "scene.sunny_terrace": "media/scenes/068_Солнечная_терраса.jpg",
+    "scene.overgrown_spring.flowing": "media/scenes/066_Заросший_родник_очищен.jpg",
+    "scene.stone_watercourse.flowing": "media/scenes/067_Каменный_водовод_вода.jpg",
+    "scene.sunny_terrace.flowing": "media/scenes/068_Солнечная_терраса_вода.jpg"
   },
   "scenes": {
     "road_end": {
@@ -3442,6 +3451,14 @@
       "dark": false,
       "actions": [
         {
+          "id": "descend_valley",
+          "target": "valley_descent",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode12_complete"
+          }
+        },
+        {
           "id": "back_pass",
           "target": "dry_pass"
         }
@@ -3474,6 +3491,231 @@
         "requires": {
           "op": "flag_set",
           "flag": "seedlings_verified"
+        }
+      }
+    },
+    "valley_descent": {
+      "step": 63,
+      "media": "scene.valley_descent",
+      "return_media": null,
+      "text_file": "texts/scenes/063_Спуск_в_долину.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_beds",
+          "target": "abandoned_beds"
+        },
+        {
+          "id": "back_waymark",
+          "target": "forest_waymark"
+        }
+      ],
+      "variants": []
+    },
+    "abandoned_beds": {
+      "step": 64,
+      "media": "scene.abandoned_beds",
+      "return_media": null,
+      "text_file": "texts/scenes/064_Заброшенные_гряды.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_soil",
+          "target": "hazel_edge"
+        },
+        {
+          "id": "enter_spring",
+          "target": "overgrown_spring"
+        },
+        {
+          "id": "enter_terrace",
+          "target": "sunny_terrace"
+        },
+        {
+          "id": "back_descent",
+          "target": "valley_descent"
+        }
+      ],
+      "variants": []
+    },
+    "hazel_edge": {
+      "step": 65,
+      "media": "scene.hazel_edge",
+      "return_media": null,
+      "text_file": "texts/scenes/065_Орешниковый_край.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_beds",
+          "target": "abandoned_beds"
+        }
+      ],
+      "variants": [],
+      "inspect_discovery": {
+        "flag": "garden_soil_checked",
+        "message": "discovery"
+      }
+    },
+    "overgrown_spring": {
+      "step": 66,
+      "media": "scene.overgrown_spring",
+      "return_media": null,
+      "text_file": "texts/scenes/066_Заросший_родник.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "clear_outlet",
+          "type": "event",
+          "effects": {
+            "flag": "garden_spring_flowing"
+          },
+          "message": "cleared",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "spring_blockage_seen"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_channel",
+          "target": "stone_watercourse"
+        },
+        {
+          "id": "back_beds",
+          "target": "abandoned_beds"
+        }
+      ],
+      "variants": [
+        {
+          "id": "066.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_spring_flowing"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open",
+          "media": "scene.overgrown_spring.flowing"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "spring_blockage_seen",
+        "message": "discovery"
+      }
+    },
+    "stone_watercourse": {
+      "step": 67,
+      "media": "scene.stone_watercourse",
+      "return_media": null,
+      "text_file": "texts/scenes/067_Каменный_водовод.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_terrace",
+          "target": "sunny_terrace"
+        },
+        {
+          "id": "back_spring",
+          "target": "overgrown_spring"
+        }
+      ],
+      "variants": [
+        {
+          "id": "067.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_spring_flowing"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open",
+          "media": "scene.stone_watercourse.flowing"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "garden_water_checked",
+        "message": "discovery",
+        "requires": {
+          "op": "flag_set",
+          "flag": "garden_spring_flowing"
+        }
+      }
+    },
+    "sunny_terrace": {
+      "step": 68,
+      "media": "scene.sunny_terrace",
+      "return_media": null,
+      "text_file": "texts/scenes/068_Солнечная_терраса.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_beds",
+          "target": "abandoned_beds"
+        },
+        {
+          "id": "back_channel",
+          "target": "stone_watercourse"
+        }
+      ],
+      "variants": [
+        {
+          "id": "068.01",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_spring_flowing"
+          },
+          "media": "scene.sunny_terrace.flowing"
+        },
+        {
+          "id": "068.02",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              }
+            ]
+          },
+          "inspect_key": "inspect_ready",
+          "hints_key": "hints_ready"
+        },
+        {
+          "id": "068.03",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_ready",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode13_complete",
+        "message": "discovery",
+        "requires": {
+          "all": [
+            {
+              "op": "flag_set",
+              "flag": "garden_soil_checked"
+            },
+            {
+              "op": "flag_set",
+              "flag": "garden_water_checked"
+            }
+          ]
         }
       }
     }
