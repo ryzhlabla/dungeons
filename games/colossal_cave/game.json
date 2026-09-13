@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "0.11.0",
+  "content_version": "0.12.0",
   "game_id": "colossal_cave_ru",
   "start_scene": "road_end",
   "media": {
@@ -70,7 +70,13 @@
     "scene.ferry_house": "media/scenes/047_Домик_перевозчика.jpg",
     "scene.far_landing": "media/scenes/048_Дальняя_пристань.jpg",
     "scene.twin_towers": "media/scenes/049_Две_сторожевые_башни.jpg",
-    "scene.seed_court": "media/scenes/050_Семенной_двор.jpg"
+    "scene.seed_court": "media/scenes/050_Семенной_двор.jpg",
+    "scene.wall_path": "media/scenes/051_Тропа_вдоль_стены.jpg",
+    "scene.service_descent": "media/scenes/052_Служебный_спуск.jpg",
+    "scene.jar_hall": "media/scenes/053_Зал_глиняных_сосудов.jpg",
+    "scene.seed_records": "media/scenes/054_Ниша_записей.jpg",
+    "scene.seed_reserve": "media/scenes/055_Камера_запаса.jpg",
+    "scene.light_chamber": "media/scenes/056_Световая_камера.jpg"
   },
   "scenes": {
     "road_end": {
@@ -2945,11 +2951,29 @@
           "target": "seed_court"
         },
         {
+          "id": "enter_wall_path",
+          "target": "wall_path",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode10_complete"
+          }
+        },
+        {
           "id": "back_landing",
           "target": "far_landing"
         }
       ],
-      "variants": []
+      "variants": [
+        {
+          "id": "049.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode10_complete"
+          },
+          "text_key": "text_storage",
+          "hints_key": "hints_storage"
+        }
+      ]
     },
     "seed_court": {
       "step": 50,
@@ -2979,6 +3003,239 @@
         "flag": "episode10_complete",
         "message": "discovery"
       }
+    },
+    "wall_path": {
+      "step": 51,
+      "media": "scene.wall_path",
+      "return_media": null,
+      "text_file": "texts/scenes/051_Тропа_вдоль_стены.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_descent",
+          "target": "service_descent"
+        },
+        {
+          "id": "back_towers",
+          "target": "twin_towers"
+        }
+      ],
+      "variants": []
+    },
+    "service_descent": {
+      "step": 52,
+      "media": "scene.service_descent",
+      "return_media": null,
+      "text_file": "texts/scenes/052_Служебный_спуск.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "descend_storage",
+          "target": "jar_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "jar_hall"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "back_wall",
+          "target": "wall_path"
+        }
+      ],
+      "variants": []
+    },
+    "jar_hall": {
+      "step": 53,
+      "media": "scene.jar_hall",
+      "return_media": null,
+      "text_file": "texts/scenes/053_Зал_глиняных_сосудов.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "enter_records",
+          "target": "seed_records",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "seed_records"
+          },
+          "failure": "dark_path"
+        },
+        {
+          "id": "enter_reserve",
+          "target": "seed_reserve"
+        },
+        {
+          "id": "back_descent",
+          "target": "service_descent"
+        }
+      ],
+      "variants": [
+        {
+          "id": "053.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ]
+    },
+    "seed_records": {
+      "step": 54,
+      "media": "scene.seed_records",
+      "return_media": null,
+      "text_file": "texts/scenes/054_Ниша_записей.json",
+      "dark": true,
+      "actions": [
+        {
+          "id": "back_hall",
+          "target": "jar_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "jar_hall"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "054.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "seed_instructions_read"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "054.99",
+          "when": {
+            "op": "no_light_here"
+          },
+          "media": "scene.darkness",
+          "text_key": "text_dark",
+          "inspect_key": "inspect_dark"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "seed_instructions_read",
+        "message": "discovery"
+      }
+    },
+    "seed_reserve": {
+      "step": 55,
+      "media": "scene.seed_reserve",
+      "return_media": null,
+      "text_file": "texts/scenes/055_Камера_запаса.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "take_sample",
+          "type": "event",
+          "effects": {
+            "flag": "seed_sample_taken"
+          },
+          "message": "taken",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "seed_instructions_read"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "seed_sample_taken"
+              }
+            ]
+          }
+        },
+        {
+          "id": "open_large",
+          "type": "event",
+          "effects": {},
+          "message": "sealed",
+          "notice_only": true,
+          "visible_if": {
+            "op": "flag_not_set",
+            "flag": "seed_sample_taken"
+          }
+        },
+        {
+          "id": "enter_light",
+          "target": "light_chamber"
+        },
+        {
+          "id": "back_hall",
+          "target": "jar_hall",
+          "requires": {
+            "op": "light_or_known_path",
+            "scene": "jar_hall"
+          },
+          "failure": "dark_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "055.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "seed_sample_taken"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ]
+    },
+    "light_chamber": {
+      "step": 56,
+      "media": "scene.light_chamber",
+      "return_media": null,
+      "text_file": "texts/scenes/056_Световая_камера.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "sow_sample",
+          "type": "event",
+          "effects": {
+            "flag": "episode11_complete"
+          },
+          "message": "sown",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "seed_sample_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode11_complete"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_reserve",
+          "target": "seed_reserve"
+        }
+      ],
+      "variants": [
+        {
+          "id": "056.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode11_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ]
     }
   },
   "copy_files": {

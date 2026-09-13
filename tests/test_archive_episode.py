@@ -95,7 +95,7 @@ def test_06_save_additive_upgrade(tmp_path):
     with repo.connect() as db:
         db.execute('INSERT INTO saves VALUES (?,?)', (1, json.dumps(old)))
     restored = repo.get(1)
-    assert restored.content_version == '0.11.0'
+    assert restored.content_version == '0.12.0'
     assert restored.flags == old['flags'] and restored.turns == 123
     assert restored.item_locations == old['item_locations']
     apply(restored, 'move:enter_constellation', c)

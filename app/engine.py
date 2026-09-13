@@ -8,7 +8,7 @@ class InvalidAction(ValueError):
 
 @dataclass
 class State:
-    content_version: str = "0.11.0"
+    content_version: str = "0.12.0"
     started: bool = False
     scene: str = "road_end"
     screen: str = "start"

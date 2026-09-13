@@ -70,7 +70,7 @@ def test_previous_save_keeps_treasure_and_unlocks_new_route(tmp_path):
     repo=Repository(tmp_path/'save.sqlite3')
     with repo.connect() as db:db.execute('INSERT INTO saves VALUES (?,?)',(1,json.dumps(data)))
     restored=repo.get(1)
-    assert restored.content_version=='0.11.0' and restored.flags==s.flags
+    assert restored.content_version=='0.12.0' and restored.flags==s.flags
     apply(restored,'move:enter_wind',c)
     assert restored.scene=='wind_gallery' and restored.item_locations['silver']=='treasury'
 

@@ -62,6 +62,8 @@ def render(state, content):
     elif state.screen == "inventory":
         title = content["copy"]["interface"]["Рюкзак"]
         parts = []
+        if state.flags.get("seed_sample_taken") and not state.flags.get("episode11_complete"):
+            parts.append(content["copy"]["interface"]["Пробная_порция_семян"])
         if state.flags.get("striker_taken"):
             parts.append(content["scenes"]["stone_bells"]["buttons"]["take_striker"].removeprefix("Взять ").capitalize() + " с длинной рукоятью")
         if state.item_locations["lamp"] == "inventory":
@@ -189,6 +191,8 @@ def render(state, content):
             goal = "Девятая_цель_выполнена" if state.flags.get("episode9_complete") else "Девятая_цель"
         if state.flags.get("episode9_complete"):
             goal = "Десятая_цель_выполнена" if state.flags.get("episode10_complete") else "Десятая_цель"
+        if state.flags.get("episode10_complete"):
+            goal = "Одиннадцатая_цель_выполнена" if state.flags.get("episode11_complete") else "Одиннадцатая_цель"
         text += "\n\n" + content["copy"]["interface"][goal]
         text += "\n\n" + content["copy"]["silver"]["progress"].format(found=int(bool(state.flags.get("silver_found"))), stored=int(bool(state.flags.get("episode4_complete"))))
         back("ui:menu", content["copy"]["interface"]["Меню"])

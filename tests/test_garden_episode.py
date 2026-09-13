@@ -88,7 +88,7 @@ def test_old_save_upgrade_and_dark_inspection(tmp_path):
  repo=Repository(tmp_path/'save.sqlite3')
  with repo.connect() as db:db.execute('INSERT INTO saves VALUES(?,?)',(1,json.dumps(old)))
  restored=repo.get(1)
- assert restored.content_version=='0.11.0' and restored.flags==s.flags
+ assert restored.content_version=='0.12.0' and restored.flags==s.flags
  assert restored.item_locations==s.item_locations
  for sid,f in [('dew_alcove','root_signs_read'),('first_shoot','episode7_complete')]:
   restored.scene=sid;restored.item_states['lamp']['power']=False

@@ -66,7 +66,7 @@ def test_090_save_upgrade_preserves_state(content,tmp_path):
     repo=Repository(tmp_path/'old.sqlite3')
     with repo.connect() as db:db.execute('INSERT INTO saves VALUES (?,?)',(1,json.dumps(old)))
     restored=repo.get(1)
-    assert restored.content_version=='0.11.0'
+    assert restored.content_version=='0.12.0'
     comparison=asdict(restored);comparison['content_version']='0.9.0'
     assert comparison==old
 

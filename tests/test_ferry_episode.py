@@ -53,7 +53,7 @@ def test_full_ferry_route_save_return_and_rewind(content,tmp_path):
     apply(s,'ui:inspect',c)
     assert s.journal==journal
     apply(s,'ui:progress',c)
-    assert c['copy']['interface']['Десятая_цель_выполнена'] in render(s,c).caption
+    assert c['copy']['interface']['Одиннадцатая_цель'] in render(s,c).caption
     repo=Repository(tmp_path/'ferry.sqlite3');repo.save(1,s);s=repo.get(1)
     assert s.flags['episode10_complete'] and s.flags['ferry_released']
     play(s,c,'ui:scene','move:back_towers','move:back_landing','move:cross_back')
@@ -81,7 +81,7 @@ def test_0100_save_upgrade_preserves_state(content,tmp_path):
     repo=Repository(tmp_path/'old.sqlite3')
     with repo.connect() as db:db.execute('INSERT INTO saves VALUES (?,?)',(1,json.dumps(old)))
     restored=repo.get(1)
-    assert restored.content_version=='0.11.0'
+    assert restored.content_version=='0.12.0'
     comparison=asdict(restored);comparison['content_version']='0.10.0'
     assert comparison==old
     apply(restored,'ui:progress',content)
@@ -102,7 +102,7 @@ def test_daylight_cards_and_returns(content,sid,stage):
 
 def test_banks_have_no_alternative_crossing(content):
     # Ferry follows the player: no path can leave it on the other bank.
-    far_side={'far_landing','twin_towers','seed_court'}
+    far_side={sid for sid,scene in content['scenes'].items() if scene['step']>=48}
     crossings=[]
     for sid,scene in content['scenes'].items():
         for action in scene['actions']:
