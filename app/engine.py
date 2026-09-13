@@ -8,7 +8,7 @@ class InvalidAction(ValueError):
 
 @dataclass
 class State:
-    content_version: str = "0.12.0"
+    content_version: str = "0.13.0"
     started: bool = False
     scene: str = "road_end"
     screen: str = "start"
@@ -125,7 +125,10 @@ def apply(state, action, content):
         state.screen = screen
         if screen == "inspect":
             discovery = content["scenes"][state.scene].get("inspect_discovery")
-            if discovery and (not scene_view(state, content).get("dark") or condition(state, {"op": "light_here"})) and not state.flags.get(discovery["flag"]):
+            if (discovery
+                    and condition(state, discovery.get("requires"))
+                    and (not scene_view(state, content).get("dark") or condition(state, {"op": "light_here"}))
+                    and not state.flags.get(discovery["flag"])):
                 state.flags[discovery["flag"]] = True
                 record(state, content["scenes"][state.scene]["messages"][discovery["message"]])
         if screen == "hint":

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "content_version": "0.12.0",
+  "content_version": "0.13.0",
   "game_id": "colossal_cave_ru",
   "start_scene": "road_end",
   "media": {
@@ -76,7 +76,14 @@
     "scene.jar_hall": "media/scenes/053_Зал_глиняных_сосудов.jpg",
     "scene.seed_records": "media/scenes/054_Ниша_записей.jpg",
     "scene.seed_reserve": "media/scenes/055_Камера_запаса.jpg",
-    "scene.light_chamber": "media/scenes/056_Световая_камера.jpg"
+    "scene.light_chamber": "media/scenes/056_Световая_камера.jpg",
+    "scene.watcher_house": "media/scenes/057_Дом_смотрителя.jpg",
+    "scene.garden_wicket": "media/scenes/058_Садовая_калитка.jpg",
+    "scene.cedar_path": "media/scenes/059_Тропа_под_кедрами.jpg",
+    "scene.boundary_stone": "media/scenes/060_Межевой_камень.jpg",
+    "scene.dry_pass": "media/scenes/061_Сухой_перевал.jpg",
+    "scene.forest_waymark": "media/scenes/062_Веха_над_лесом.jpg",
+    "scene.light_chamber.sprouts": "media/scenes/056_Световая_камера_всходы.jpg"
   },
   "scenes": {
     "road_end": {
@@ -3016,11 +3023,29 @@
           "target": "service_descent"
         },
         {
+          "id": "enter_watcher",
+          "target": "watcher_house",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode11_complete"
+          }
+        },
+        {
           "id": "back_towers",
           "target": "twin_towers"
         }
       ],
-      "variants": []
+      "variants": [
+        {
+          "id": "051.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode11_complete"
+          },
+          "text_key": "text_watcher",
+          "hints_key": "hints_watcher"
+        }
+      ]
     },
     "service_descent": {
       "step": 52,
@@ -3234,8 +3259,223 @@
           "text_key": "text_open",
           "inspect_key": "inspect_open",
           "hints_key": "hints_open"
+        },
+        {
+          "id": "056.03",
+          "when": {
+            "op": "flag_set",
+            "flag": "seedlings_ready"
+          },
+          "media": "scene.light_chamber.sprouts",
+          "text_key": "text_grown",
+          "inspect_key": "inspect_grown",
+          "hints_key": "hints_grown"
         }
-      ]
+      ],
+      "inspect_discovery": {
+        "flag": "seedlings_verified",
+        "message": "verified",
+        "requires": {
+          "op": "flag_set",
+          "flag": "seedlings_ready"
+        }
+      }
+    },
+    "watcher_house": {
+      "step": 57,
+      "media": "scene.watcher_house",
+      "return_media": null,
+      "text_file": "texts/scenes/057_Дом_смотрителя.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "tend_seedbed",
+          "type": "event",
+          "effects": {
+            "flag": "seedlings_ready"
+          },
+          "message": "days_passed",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "episode11_complete"
+              },
+              {
+                "op": "flag_set",
+                "flag": "watcher_notes_read"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "seedlings_ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_gate",
+          "target": "garden_wicket",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "seedlings_verified"
+          }
+        },
+        {
+          "id": "back_wall",
+          "target": "wall_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "057.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "seedlings_ready"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "watcher_notes_read",
+        "message": "discovery"
+      }
+    },
+    "garden_wicket": {
+      "step": 58,
+      "media": "scene.garden_wicket",
+      "return_media": null,
+      "text_file": "texts/scenes/058_Садовая_калитка.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_cedars",
+          "target": "cedar_path"
+        },
+        {
+          "id": "back_house",
+          "target": "watcher_house"
+        }
+      ],
+      "variants": []
+    },
+    "cedar_path": {
+      "step": 59,
+      "media": "scene.cedar_path",
+      "return_media": null,
+      "text_file": "texts/scenes/059_Тропа_под_кедрами.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_marker",
+          "target": "boundary_stone"
+        },
+        {
+          "id": "back_gate",
+          "target": "garden_wicket"
+        }
+      ],
+      "variants": []
+    },
+    "boundary_stone": {
+      "step": 60,
+      "media": "scene.boundary_stone",
+      "return_media": null,
+      "text_file": "texts/scenes/060_Межевой_камень.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_pass",
+          "target": "dry_pass",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "return_path_known"
+          }
+        },
+        {
+          "id": "back_cedars",
+          "target": "cedar_path"
+        }
+      ],
+      "variants": [
+        {
+          "id": "060.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "return_path_known"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "return_path_known",
+        "message": "discovery"
+      }
+    },
+    "dry_pass": {
+      "step": 61,
+      "media": "scene.dry_pass",
+      "return_media": null,
+      "text_file": "texts/scenes/061_Сухой_перевал.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_waymark",
+          "target": "forest_waymark"
+        },
+        {
+          "id": "back_marker",
+          "target": "boundary_stone"
+        }
+      ],
+      "variants": []
+    },
+    "forest_waymark": {
+      "step": 62,
+      "media": "scene.forest_waymark",
+      "return_media": null,
+      "text_file": "texts/scenes/062_Веха_над_лесом.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_pass",
+          "target": "dry_pass"
+        }
+      ],
+      "variants": [
+        {
+          "id": "062.01",
+          "when": {
+            "op": "flag_set",
+            "flag": "seedlings_verified"
+          },
+          "text_key": "text_ready",
+          "inspect_key": "inspect_ready",
+          "hints_key": "hints_ready"
+        },
+        {
+          "id": "062.02",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode12_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode12_complete",
+        "message": "discovery",
+        "requires": {
+          "op": "flag_set",
+          "flag": "seedlings_verified"
+        }
+      }
     }
   },
   "copy_files": {

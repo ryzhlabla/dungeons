@@ -63,7 +63,7 @@ def test_full_seed_route_and_consumption(content,tmp_path):
     assert not set(SCENES).intersection(rolled['visited'])
     assert not any(rolled['flags'].get(f) for f in ('seed_instructions_read','seed_sample_taken','episode11_complete'))
     apply(s,'ui:progress',c)
-    assert c['copy']['interface']['Одиннадцатая_цель_выполнена'] in render(s,c).caption
+    assert c['copy']['interface']['Двенадцатая_цель'] in render(s,c).caption
     play(s,c,'ui:confirm','reset','ui:inventory')
     assert not s.flags and label not in render(s,c).caption
 
@@ -85,7 +85,7 @@ def test_0110_save_upgrade(content,tmp_path):
     repo=Repository(tmp_path/'old.sqlite3')
     with repo.connect() as db:db.execute('INSERT INTO saves VALUES (?,?)',(1,json.dumps(old)))
     loaded=repo.get(1)
-    assert loaded.content_version=='0.12.0'
+    assert loaded.content_version=='0.13.0'
     comparison=asdict(loaded);comparison['content_version']='0.11.0'
     assert comparison==old
     apply(loaded,'ui:progress',content)

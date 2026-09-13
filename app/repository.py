@@ -21,10 +21,10 @@ class Repository:
         if not row:
             return State()
         data = json.loads(row[0])
-        if data.get("content_version") not in {"0.1.0", "0.2.0", "0.3.0", "0.4.0", "0.5.0", "0.6.0", "0.7.0", "0.8.0", "0.9.0", "0.10.0", "0.11.0", "0.12.0"}:
+        if data.get("content_version") not in {"0.1.0", "0.2.0", "0.3.0", "0.4.0", "0.5.0", "0.6.0", "0.7.0", "0.8.0", "0.9.0", "0.10.0", "0.11.0", "0.12.0", "0.13.0"}:
             raise ValueError("Unsupported save version; preserve data and migrate before loading")
         # Additive migration: preserve all existing items, locations, turns and history.
-        data["content_version"] = "0.12.0"
+        data["content_version"] = "0.13.0"
         data.setdefault("flags", {})
         data["item_locations"].setdefault("keys", "inside_house")
         data["item_locations"].setdefault("cage", "debris_grotto")

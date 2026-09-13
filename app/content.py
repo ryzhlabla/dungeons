@@ -110,6 +110,8 @@ def load_content(manifest=None, text_sources=None):
                 or not isinstance(discovery.get("flag"), str) or not discovery["flag"]
                 or discovery.get("message") not in scene.get("messages", {})):
             raise ValueError(f"Invalid inspect discovery: {scene_id}")
+        if discovery:
+            validate_condition(discovery.get("requires"), scenes)
         for action in scene["actions"]:
             if action["id"] in seen or (action.get("type") != "event" and action.get("target") not in scenes):
                 raise ValueError(f"Invalid action: {scene_id}/{action['id']}")
