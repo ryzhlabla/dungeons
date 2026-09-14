@@ -99,7 +99,24 @@
     "scene.wall_seedbed": "media/scenes/072_Гряда_у_стены.jpg",
     "scene.watering_basin": "media/scenes/073_Чаша_для_полива.jpg",
     "scene.sowing_plot": "media/scenes/074_Посевная_площадка.jpg",
-    "scene.sowing_plot.watered": "media/scenes/074_Посевная_площадка_полита.jpg"
+    "scene.sowing_plot.watered": "media/scenes/074_Посевная_площадка_полита.jpg",
+    "scene.garden_lodging": "media/scenes/075_Жилой_уголок.jpg",
+    "scene.calendar_wall": "media/scenes/076_Календарная_стена.jpg",
+    "scene.reed_screen_yard": "media/scenes/077_Двор_плетёных_щитов.jpg",
+    "scene.rain_drain": "media/scenes/078_Дождевая_канавка.jpg",
+    "scene.garden_round": "media/scenes/079_Обходная_дорожка.jpg",
+    "scene.morning_seedlings": "media/scenes/080_Утренние_всходы.jpg",
+    "scene.lower_garden": "media/scenes/081_Нижний_сад.jpg",
+    "scene.harvest_relief": "media/scenes/082_Памятка_сборщика.jpg",
+    "scene.dry_seed_store": "media/scenes/083_Сухая_кладовая.jpg",
+    "scene.linen_yard": "media/scenes/084_Льняной_двор.jpg",
+    "scene.season_court": "media/scenes/085_Площадка_времён_года.jpg",
+    "scene.keepers_garden": "media/scenes/086_Сад_хранителей.jpg",
+    "scene.rain_drain.done": "media/scenes/078_Дождевая_канавка_очищена.jpg",
+    "scene.dry_seed_store.done": "media/scenes/083_Сухая_кладовая_запас.jpg",
+    "epilogue.garden_bloom": "media/epilogue/garden_bloom.jpg",
+    "epilogue.garden_fruit": "media/epilogue/garden_fruit.jpg",
+    "epilogue.garden_valley": "media/epilogue/garden_valley.jpg"
   },
   "scenes": {
     "road_end": {
@@ -3783,6 +3800,60 @@
           },
           "inspect_key": "inspect_progress_finished",
           "hints_key": "hints_progress_finished"
+        },
+        {
+          "id": "64.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "64.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "64.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "64.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "64.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "64.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ]
     },
@@ -3993,6 +4064,60 @@
           },
           "inspect_key": "inspect_progress_finished",
           "hints_key": "hints_progress_finished"
+        },
+        {
+          "id": "65.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "65.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "65.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "65.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "65.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "65.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4243,6 +4368,60 @@
           },
           "inspect_key": "inspect_progress_finished",
           "hints_key": "hints_progress_finished"
+        },
+        {
+          "id": "66.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "66.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "66.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "66.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "66.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "66.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4472,6 +4651,60 @@
           },
           "inspect_key": "inspect_progress_finished",
           "hints_key": "hints_progress_finished"
+        },
+        {
+          "id": "67.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "67.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "67.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "67.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "67.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "67.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4732,6 +4965,60 @@
           },
           "inspect_key": "inspect_progress_finished",
           "hints_key": "hints_progress_finished"
+        },
+        {
+          "id": "68.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "68.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "68.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "68.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "68.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "68.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4775,7 +5062,62 @@
           "target": "sunny_terrace"
         }
       ],
-      "variants": []
+      "variants": [
+        {
+          "id": "69.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "69.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "69.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "69.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "69.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "69.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
+        }
+      ]
     },
     "garden_workbench": {
       "step": 70,
@@ -4799,6 +5141,60 @@
           "text_key": "text_open",
           "inspect_key": "inspect_open",
           "hints_key": "hints_open"
+        },
+        {
+          "id": "70.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "70.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "70.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "70.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "70.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "70.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4828,6 +5224,60 @@
           "text_key": "text_open",
           "inspect_key": "inspect_open",
           "hints_key": "hints_open"
+        },
+        {
+          "id": "71.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "71.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "71.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "71.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "71.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "71.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4910,6 +5360,66 @@
           "text_key": "text_sown",
           "inspect_key": "inspect_sown",
           "hints_key": "hints_sown"
+        },
+        {
+          "id": "72.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "72.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown",
+          "text_key": "text_final_grown",
+          "media": "scene.morning_seedlings"
+        },
+        {
+          "id": "72.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "72.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe",
+          "text_key": "text_final_ripe",
+          "media": "scene.keepers_garden"
+        },
+        {
+          "id": "72.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "72.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending",
+          "text_key": "text_final_ending",
+          "media": "scene.keepers_garden"
         }
       ]
     },
@@ -4939,6 +5449,60 @@
           "text_key": "text_open",
           "inspect_key": "inspect_open",
           "hints_key": "hints_open"
+        },
+        {
+          "id": "73.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "73.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown"
+        },
+        {
+          "id": "73.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "73.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe"
+        },
+        {
+          "id": "73.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "73.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending"
         }
       ],
       "inspect_discovery": {
@@ -4953,6 +5517,14 @@
       "text_file": "texts/scenes/074_Посевная_площадка.json",
       "dark": false,
       "actions": [
+        {
+          "id": "enter_lodging",
+          "target": "garden_lodging",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          }
+        },
         {
           "id": "sow_seeds",
           "type": "event",
@@ -5043,8 +5615,1100 @@
           "inspect_key": "inspect_open",
           "hints_key": "hints_open",
           "media": "scene.sowing_plot.watered"
+        },
+        {
+          "id": "74.final.care",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_final_care",
+          "hints_key": "hints_final_care"
+        },
+        {
+          "id": "74.final.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "inspect_key": "inspect_final_grown",
+          "hints_key": "hints_final_grown",
+          "text_key": "text_final_grown",
+          "media": "scene.morning_seedlings"
+        },
+        {
+          "id": "74.final.next",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "inspect_key": "inspect_final_next",
+          "hints_key": "hints_final_next"
+        },
+        {
+          "id": "74.final.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "inspect_key": "inspect_final_ripe",
+          "hints_key": "hints_final_ripe",
+          "text_key": "text_final_ripe",
+          "media": "scene.keepers_garden"
+        },
+        {
+          "id": "74.final.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "inspect_key": "inspect_final_collected",
+          "hints_key": "hints_final_collected"
+        },
+        {
+          "id": "74.final.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "inspect_key": "inspect_final_ending",
+          "hints_key": "hints_final_ending",
+          "text_key": "text_final_ending",
+          "media": "scene.keepers_garden"
         }
       ]
+    },
+    "garden_lodging": {
+      "step": 75,
+      "media": "scene.garden_lodging",
+      "return_media": null,
+      "text_file": "texts/scenes/075_Жилой_уголок.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "tend_new_garden",
+          "type": "event",
+          "effects": {
+            "flag": "new_garden_grown"
+          },
+          "message": "tend_new_garden",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_drain_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "episode14_complete"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "new_garden_grown"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_calendar",
+          "target": "calendar_wall"
+        },
+        {
+          "id": "enter_screens",
+          "target": "reed_screen_yard"
+        },
+        {
+          "id": "enter_drain",
+          "target": "rain_drain"
+        },
+        {
+          "id": "enter_round",
+          "target": "garden_round"
+        },
+        {
+          "id": "back_plot",
+          "target": "sowing_plot"
+        }
+      ],
+      "variants": [
+        {
+          "id": "75.pending_0",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_0",
+          "hints_key": "hints_pending_0"
+        },
+        {
+          "id": "75.pending_1",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_1",
+          "hints_key": "hints_pending_1"
+        },
+        {
+          "id": "75.pending_2",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_2",
+          "hints_key": "hints_pending_2"
+        },
+        {
+          "id": "75.pending_3",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_3",
+          "hints_key": "hints_pending_3"
+        },
+        {
+          "id": "75.pending_4",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_4",
+          "hints_key": "hints_pending_4"
+        },
+        {
+          "id": "75.pending_5",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_5",
+          "hints_key": "hints_pending_5"
+        },
+        {
+          "id": "75.pending_6",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_6",
+          "hints_key": "hints_pending_6"
+        },
+        {
+          "id": "75.pending_7",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_care_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_shade_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_7",
+          "hints_key": "hints_pending_7"
+        },
+        {
+          "id": "75.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "text_key": "text_grown",
+          "inspect_key": "inspect_grown",
+          "hints_key": "hints_grown"
+        },
+        {
+          "id": "75.established",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "text_key": "text_established",
+          "inspect_key": "inspect_established",
+          "hints_key": "hints_established"
+        },
+        {
+          "id": "75.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ]
+    },
+    "calendar_wall": {
+      "step": 76,
+      "media": "scene.calendar_wall",
+      "return_media": null,
+      "text_file": "texts/scenes/076_Календарная_стена.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_lodging",
+          "target": "garden_lodging"
+        }
+      ],
+      "variants": [
+        {
+          "id": "76.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "garden_care_known",
+        "message": "discovery"
+      }
+    },
+    "reed_screen_yard": {
+      "step": 77,
+      "media": "scene.reed_screen_yard",
+      "return_media": null,
+      "text_file": "texts/scenes/077_Двор_плетёных_щитов.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "set_shade",
+          "type": "event",
+          "effects": {
+            "flag": "garden_shade_ready"
+          },
+          "message": "set_shade",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "shade_slots_seen"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_shade_ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_lodging",
+          "target": "garden_lodging"
+        }
+      ],
+      "variants": [
+        {
+          "id": "77.done",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_shade_ready"
+          },
+          "text_key": "text_done",
+          "inspect_key": "inspect_done",
+          "hints_key": "hints_done"
+        },
+        {
+          "id": "77.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "shade_slots_seen",
+        "message": "discovery"
+      }
+    },
+    "rain_drain": {
+      "step": 78,
+      "media": "scene.rain_drain",
+      "return_media": null,
+      "text_file": "texts/scenes/078_Дождевая_канавка.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "clear_rain",
+          "type": "event",
+          "effects": {
+            "flag": "garden_drain_ready"
+          },
+          "message": "clear_rain",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "rain_outlet_seen"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_drain_ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_lodging",
+          "target": "garden_lodging"
+        }
+      ],
+      "variants": [
+        {
+          "id": "78.done",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_drain_ready"
+          },
+          "text_key": "text_done",
+          "inspect_key": "inspect_done",
+          "hints_key": "hints_done"
+        },
+        {
+          "id": "78.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        },
+        {
+          "id": "78.image.done",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_drain_ready"
+          },
+          "media": "scene.rain_drain.done"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "rain_outlet_seen",
+        "message": "discovery"
+      }
+    },
+    "garden_round": {
+      "step": 79,
+      "media": "scene.garden_round",
+      "return_media": null,
+      "text_file": "texts/scenes/079_Обходная_дорожка.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_shoots",
+          "target": "morning_seedlings",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          }
+        },
+        {
+          "id": "back_lodging",
+          "target": "garden_lodging"
+        }
+      ],
+      "variants": [
+        {
+          "id": "79.grown",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_garden_grown"
+          },
+          "text_key": "text_grown",
+          "inspect_key": "inspect_grown",
+          "hints_key": "hints_grown"
+        },
+        {
+          "id": "79.established",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "text_key": "text_established",
+          "inspect_key": "inspect_established",
+          "hints_key": "hints_established"
+        },
+        {
+          "id": "79.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ]
+    },
+    "morning_seedlings": {
+      "step": 80,
+      "media": "scene.morning_seedlings",
+      "return_media": null,
+      "text_file": "texts/scenes/080_Утренние_всходы.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_lower",
+          "target": "lower_garden",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          }
+        },
+        {
+          "id": "back_round",
+          "target": "garden_round"
+        }
+      ],
+      "variants": [
+        {
+          "id": "80.established",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode15_complete"
+          },
+          "text_key": "text_established",
+          "inspect_key": "inspect_established",
+          "hints_key": "hints_established"
+        },
+        {
+          "id": "80.mature",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "text_key": "text_mature",
+          "inspect_key": "inspect_mature",
+          "hints_key": "hints_mature",
+          "media": "scene.keepers_garden"
+        },
+        {
+          "id": "80.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending",
+          "media": "scene.keepers_garden"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "episode15_complete",
+        "message": "discovery",
+        "requires": {
+          "op": "flag_set",
+          "flag": "new_garden_grown"
+        }
+      }
+    },
+    "lower_garden": {
+      "step": 81,
+      "media": "scene.lower_garden",
+      "return_media": null,
+      "text_file": "texts/scenes/081_Нижний_сад.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_record",
+          "target": "harvest_relief"
+        },
+        {
+          "id": "enter_store",
+          "target": "dry_seed_store"
+        },
+        {
+          "id": "enter_linen",
+          "target": "linen_yard"
+        },
+        {
+          "id": "enter_seasons",
+          "target": "season_court"
+        },
+        {
+          "id": "back_shoots",
+          "target": "morning_seedlings"
+        }
+      ],
+      "variants": [
+        {
+          "id": "81.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ]
+    },
+    "harvest_relief": {
+      "step": 82,
+      "media": "scene.harvest_relief",
+      "return_media": null,
+      "text_file": "texts/scenes/082_Памятка_сборщика.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_lower",
+          "target": "lower_garden"
+        }
+      ],
+      "variants": [
+        {
+          "id": "82.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "harvest_method_known",
+        "message": "discovery"
+      }
+    },
+    "dry_seed_store": {
+      "step": 83,
+      "media": "scene.dry_seed_store",
+      "return_media": null,
+      "text_file": "texts/scenes/083_Сухая_кладовая.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "store_new_seeds",
+          "type": "event",
+          "effects": {
+            "flag": "episode16_complete"
+          },
+          "message": "store_new_seeds",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "new_seeds_collected"
+              },
+              {
+                "op": "flag_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode16_complete"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_lower",
+          "target": "lower_garden"
+        }
+      ],
+      "variants": [
+        {
+          "id": "83.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "text_key": "text_collected",
+          "inspect_key": "inspect_collected",
+          "hints_key": "hints_collected"
+        },
+        {
+          "id": "83.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        },
+        {
+          "id": "83.image.done",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "media": "scene.dry_seed_store.done"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "new_store_checked",
+        "message": "discovery"
+      }
+    },
+    "linen_yard": {
+      "step": 84,
+      "media": "scene.linen_yard",
+      "return_media": null,
+      "text_file": "texts/scenes/084_Льняной_двор.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_lower",
+          "target": "lower_garden"
+        }
+      ],
+      "variants": [
+        {
+          "id": "84.done",
+          "when": {
+            "op": "flag_set",
+            "flag": "linen_bags_taken"
+          },
+          "text_key": "text_done",
+          "inspect_key": "inspect_done",
+          "hints_key": "hints_done"
+        },
+        {
+          "id": "84.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "linen_bags_taken",
+        "message": "discovery"
+      }
+    },
+    "season_court": {
+      "step": 85,
+      "media": "scene.season_court",
+      "return_media": null,
+      "text_file": "texts/scenes/085_Площадка_времён_года.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "grow_season",
+          "type": "event",
+          "effects": {
+            "flag": "garden_season_passed"
+          },
+          "message": "grow_season",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "episode15_complete"
+              },
+              {
+                "op": "flag_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "linen_bags_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_season_passed"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_living",
+          "target": "keepers_garden",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          }
+        },
+        {
+          "id": "back_lower",
+          "target": "lower_garden"
+        }
+      ],
+      "variants": [
+        {
+          "id": "85.pending_0",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_0",
+          "hints_key": "hints_pending_0"
+        },
+        {
+          "id": "85.pending_1",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_1",
+          "hints_key": "hints_pending_1"
+        },
+        {
+          "id": "85.pending_2",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_2",
+          "hints_key": "hints_pending_2"
+        },
+        {
+          "id": "85.pending_3",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_3",
+          "hints_key": "hints_pending_3"
+        },
+        {
+          "id": "85.pending_4",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_4",
+          "hints_key": "hints_pending_4"
+        },
+        {
+          "id": "85.pending_5",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_5",
+          "hints_key": "hints_pending_5"
+        },
+        {
+          "id": "85.pending_6",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_6",
+          "hints_key": "hints_pending_6"
+        },
+        {
+          "id": "85.pending_7",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "harvest_method_known"
+              },
+              {
+                "op": "flag_set",
+                "flag": "new_store_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "linen_bags_taken"
+              }
+            ]
+          },
+          "inspect_key": "inspect_pending_7",
+          "hints_key": "hints_pending_7"
+        },
+        {
+          "id": "85.ripe",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_season_passed"
+          },
+          "text_key": "text_ripe",
+          "inspect_key": "inspect_ripe",
+          "hints_key": "hints_ripe"
+        },
+        {
+          "id": "85.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ]
+    },
+    "keepers_garden": {
+      "step": 86,
+      "media": "scene.keepers_garden",
+      "return_media": null,
+      "text_file": "texts/scenes/086_Сад_хранителей.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "collect_new_seeds",
+          "type": "event",
+          "effects": {
+            "flag": "new_seeds_collected"
+          },
+          "message": "collect_new_seeds",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "ripe_pods_seen"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_season_passed"
+              },
+              {
+                "op": "flag_set",
+                "flag": "linen_bags_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "new_seeds_collected"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_seasons",
+          "target": "season_court"
+        }
+      ],
+      "variants": [
+        {
+          "id": "86.collected",
+          "when": {
+            "op": "flag_set",
+            "flag": "new_seeds_collected"
+          },
+          "text_key": "text_collected",
+          "inspect_key": "inspect_collected",
+          "hints_key": "hints_collected"
+        },
+        {
+          "id": "86.ending",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode16_complete"
+          },
+          "text_key": "text_ending",
+          "inspect_key": "inspect_ending",
+          "hints_key": "hints_ending"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "ripe_pods_seen",
+        "message": "discovery",
+        "requires": {
+          "op": "flag_set",
+          "flag": "garden_season_passed"
+        }
+      }
     }
   },
   "copy_files": {

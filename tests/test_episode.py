@@ -105,7 +105,7 @@ def test_old_save_migrates_without_reset(tmp_path):
 
 def test_numbered_text_and_variant_images_are_linked():
     c=load_content()
-    assert sorted(s["step"] for s in c["scenes"].values())==list(range(1,75))
+    assert sorted(s["step"] for s in c["scenes"].values())==list(range(1,87))
     s,c=prepared()
     play(s,c,"event:open_grate")
     assert render(s,c).asset=="scene.grate.open"

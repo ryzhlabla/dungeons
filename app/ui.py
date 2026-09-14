@@ -32,6 +32,18 @@ def render(state, content):
         title = content["copy"]["interface"]["Как_играть"]
         text = content["copy"]["interface"]["Нажимайте_на_действия_под_картинкой_Осматривайтесь_собирайте"]
         back("ui:start", content["copy"]["interface"]["Назад"])
+    elif state.screen in {"garden_bloom", "garden_fruit", "garden_valley", "garden_goodbye"}:
+        copy = content["copy"]["interface"]
+        title, text = copy[state.screen + "_title"], copy[state.screen + "_text"]
+        if state.screen == "garden_bloom":
+            row((copy["Эпилог_далее"], "ui:garden_fruit"))
+        elif state.screen == "garden_fruit":
+            row((copy["Эпилог_далее"], "ui:garden_valley"))
+        elif state.screen == "garden_valley":
+            row((copy["Закончить_игру"], "ui:garden_goodbye"))
+            row((copy["Побродить_по_миру"], "ui:scene"))
+        else:
+            row((copy["Побродить_по_миру"], "ui:scene"))
     elif state.screen == "scene":
         title, text = "📍 " + scene["title"].upper(), scene["text"]
         if state.item_locations["lamp"] == state.scene:
@@ -62,6 +74,10 @@ def render(state, content):
     elif state.screen == "inventory":
         title = content["copy"]["interface"]["Рюкзак"]
         parts = []
+        if state.flags.get("new_seeds_collected") and not state.flags.get("episode16_complete"):
+            parts.append(content["copy"]["interface"]["Новый_сбор"])
+        elif state.flags.get("linen_bags_taken") and not state.flags.get("episode16_complete"):
+            parts.append(content["copy"]["interface"]["Льняные_мешочки"])
         if state.flags.get("garden_tools_taken"):
             parts.append(content["copy"]["interface"]["Садовые_принадлежности"])
         if state.flags.get("watering_can_taken"):
@@ -166,6 +182,8 @@ def render(state, content):
         title, text = content["copy"]["interface"]["Привал"], content["copy"]["interface"]["Можно_свериться_с_дневником_или_посмотреть_сколько"]
         row((content["copy"]["interface"]["Дневник"], "ui:journal"), (content["copy"]["interface"]["Прогресс"], "ui:progress"))
         row((content["copy"]["interface"]["Начать_заново"], "ui:confirm"))
+        if state.flags.get("episode16_complete"):
+            row((content["copy"]["interface"]["Эпилог_сада"], "ui:garden_bloom"))
         back()
     elif state.screen == "journal":
         title = content["copy"]["interface"]["Дневник"]
@@ -205,6 +223,12 @@ def render(state, content):
             goal = "Тринадцатая_цель_выполнена" if state.flags.get("episode13_complete") else "Тринадцатая_цель"
         if state.flags.get("episode13_complete"):
             goal = "Четырнадцатая_цель_выполнена" if state.flags.get("episode14_complete") else "Четырнадцатая_цель"
+        if state.flags.get("episode14_complete"):
+            goal = "Пятнадцатая_цель"
+        if state.flags.get("episode15_complete"):
+            goal = "Шестнадцатая_цель"
+        if state.flags.get("episode16_complete"):
+            goal = "Шестнадцатая_цель_выполнена"
         text += "\n\n" + content["copy"]["interface"][goal]
         text += "\n\n" + content["copy"]["silver"]["progress"].format(found=int(bool(state.flags.get("silver_found"))), stored=int(bool(state.flags.get("episode4_complete"))))
         back("ui:menu", content["copy"]["interface"]["Меню"])
@@ -223,4 +247,6 @@ def render(state, content):
         text = state.notice if notice_only else state.notice + "\n\n" + text
     caption = "<b>" + escape(title) + "</b>\n\n" + escape(text)
     asset = content["scenes"][content["start_scene"]]["media"] if state.screen in {"start", "help"} else scene["media"]
+    if state.screen in {"garden_bloom", "garden_fruit", "garden_valley", "garden_goodbye"}:
+        asset = "epilogue." + ("garden_valley" if state.screen == "garden_goodbye" else state.screen)
     return Card(asset, caption, InlineKeyboardMarkup(inline_keyboard=rows))

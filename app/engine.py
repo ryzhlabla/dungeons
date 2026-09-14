@@ -112,8 +112,11 @@ def apply(state, action, content):
     elif action.startswith("ui:"):
         screen = action[3:]
         if screen not in {"scene", "inspect", "inventory", "item", "hint", "menu",
-                          "journal", "progress", "confirm", "keys", "cage", "silver"}:
+                          "journal", "progress", "confirm", "keys", "cage", "silver",
+                          "garden_bloom", "garden_fruit", "garden_valley", "garden_goodbye"}:
             raise InvalidAction("Unknown screen")
+        if screen.startswith("garden_") and not state.flags.get("episode16_complete"):
+            raise InvalidAction("Garden story not completed")
         if screen == "item" and state.item_locations["lamp"] != "inventory":
             raise InvalidAction("Item not carried")
         if screen == "keys" and state.item_locations["keys"] != "inventory":
@@ -156,6 +159,9 @@ def apply(state, action, content):
             state.notice = scene["messages"][selected["message"]]
             if selected["effects"]:
                 record(state, state.notice)
+            if flag == "episode16_complete":
+                state.screen = "garden_bloom"
+                state.notice = ""
         else:
             state.returning = selected["target"] in state.visited
             state.scene = selected["target"]
