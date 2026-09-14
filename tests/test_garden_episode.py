@@ -40,7 +40,7 @@ def test_garden_route(content,tmp_path,soil_first):
     repo=Repository(tmp_path/'garden.sqlite3'); repo.save(1,s)
     assert asdict(repo.get(1))==asdict(s)
     apply(s,'ui:progress',c)
-    assert c['copy']['interface']['Тринадцатая_цель_выполнена'] in render(s,c).caption
+    assert c['copy']['interface']['Четырнадцатая_цель'] in render(s,c).caption
     rolled=rewind_star(asdict(s),c)
     assert not any(rolled['flags'].get(f) for f in ('garden_soil_checked','garden_water_checked','garden_spring_flowing','spring_blockage_seen','episode13_complete'))
     play(s,c,'ui:scene','move:back_beds','move:back_descent','move:back_waymark')
@@ -49,6 +49,19 @@ def test_garden_route(content,tmp_path,soil_first):
 def test_entry_requires_waymark(content):
     s=start();s.flags.clear()
     with pytest.raises(InvalidAction):apply(s,'move:descend_valley',content)
+
+def test_terrace_guidance_tracks_remaining_check(content):
+    s=start();s.scene='sunny_terrace'
+    s.flags.update(garden_soil_checked=True,garden_spring_flowing=True)
+    apply(s,'ui:inspect',content)
+    caption=render(s,content).caption
+    assert 'Почва у орешника проверена' in caption
+    assert 'перейдите в каменный водовод' in caption
+    assert not s.flags.get('episode13_complete')
+    play(s,content,'ui:scene','move:back_channel','ui:inspect','ui:scene','move:enter_terrace','ui:inspect')
+    assert s.flags['episode13_complete']
+    assert 'садовый навес' in render(s,content).caption
+    assert 'ещё не проверена' not in render(s,content).caption
 
 @pytest.mark.parametrize('stage',[False,True])
 def test_cards(content,stage):

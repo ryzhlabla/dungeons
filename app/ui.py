@@ -62,6 +62,12 @@ def render(state, content):
     elif state.screen == "inventory":
         title = content["copy"]["interface"]["Рюкзак"]
         parts = []
+        if state.flags.get("garden_tools_taken"):
+            parts.append(content["copy"]["interface"]["Садовые_принадлежности"])
+        if state.flags.get("watering_can_taken"):
+            parts.append(content["copy"]["interface"]["Лейка"])
+        if state.flags.get("main_seed_portion_taken") and not state.flags.get("main_seeds_sown"):
+            parts.append(content["copy"]["interface"]["Семена_для_сада"])
         if state.flags.get("seed_sample_taken") and not state.flags.get("episode11_complete"):
             parts.append(content["copy"]["interface"]["Пробная_порция_семян"])
         if state.flags.get("striker_taken"):
@@ -197,6 +203,8 @@ def render(state, content):
             goal = "Двенадцатая_цель_выполнена" if state.flags.get("episode12_complete") else "Двенадцатая_цель"
         if state.flags.get("episode12_complete"):
             goal = "Тринадцатая_цель_выполнена" if state.flags.get("episode13_complete") else "Тринадцатая_цель"
+        if state.flags.get("episode13_complete"):
+            goal = "Четырнадцатая_цель_выполнена" if state.flags.get("episode14_complete") else "Четырнадцатая_цель"
         text += "\n\n" + content["copy"]["interface"][goal]
         text += "\n\n" + content["copy"]["silver"]["progress"].format(found=int(bool(state.flags.get("silver_found"))), stored=int(bool(state.flags.get("episode4_complete"))))
         back("ui:menu", content["copy"]["interface"]["Меню"])

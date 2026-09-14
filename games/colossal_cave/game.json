@@ -92,7 +92,14 @@
     "scene.sunny_terrace": "media/scenes/068_Солнечная_терраса.jpg",
     "scene.overgrown_spring.flowing": "media/scenes/066_Заросший_родник_очищен.jpg",
     "scene.stone_watercourse.flowing": "media/scenes/067_Каменный_водовод_вода.jpg",
-    "scene.sunny_terrace.flowing": "media/scenes/068_Солнечная_терраса_вода.jpg"
+    "scene.sunny_terrace.flowing": "media/scenes/068_Солнечная_терраса_вода.jpg",
+    "scene.garden_shelter": "media/scenes/069_Садовый_навес.jpg",
+    "scene.garden_workbench": "media/scenes/070_Рабочая_ниша.jpg",
+    "scene.leaf_yard": "media/scenes/071_Листовой_двор.jpg",
+    "scene.wall_seedbed": "media/scenes/072_Гряда_у_стены.jpg",
+    "scene.watering_basin": "media/scenes/073_Чаша_для_полива.jpg",
+    "scene.sowing_plot": "media/scenes/074_Посевная_площадка.jpg",
+    "scene.sowing_plot.watered": "media/scenes/074_Посевная_площадка_полита.jpg"
   },
   "scenes": {
     "road_end": {
@@ -3167,6 +3174,31 @@
       "dark": false,
       "actions": [
         {
+          "id": "take_main_seeds",
+          "type": "event",
+          "effects": {
+            "flag": "main_seed_portion_taken"
+          },
+          "message": "main_taken",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "main_bed_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_tools_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "main_seed_portion_taken"
+              }
+            ]
+          }
+        },
+        {
           "id": "take_sample",
           "type": "event",
           "effects": {
@@ -3222,6 +3254,26 @@
           "text_key": "text_open",
           "inspect_key": "inspect_open",
           "hints_key": "hints_open"
+        },
+        {
+          "id": "055.11",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "text_key": "text_ready",
+          "inspect_key": "inspect_ready",
+          "hints_key": "hints_ready"
+        },
+        {
+          "id": "055.12",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "text_key": "text_taken",
+          "inspect_key": "inspect_taken",
+          "hints_key": "hints_taken"
         }
       ]
     },
@@ -3536,7 +3588,203 @@
           "target": "valley_descent"
         }
       ],
-      "variants": []
+      "variants": [
+        {
+          "id": "64.guidance.guide_000",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_000",
+          "hints_key": "hints_guide_000"
+        },
+        {
+          "id": "64.guidance.guide_010",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_010",
+          "hints_key": "hints_guide_010"
+        },
+        {
+          "id": "64.guidance.guide_011",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_011",
+          "hints_key": "hints_guide_011"
+        },
+        {
+          "id": "64.guidance.guide_100",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_100",
+          "hints_key": "hints_guide_100"
+        },
+        {
+          "id": "64.guidance.guide_110",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_110",
+          "hints_key": "hints_guide_110"
+        },
+        {
+          "id": "64.guidance.guide_111",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_111",
+          "hints_key": "hints_guide_111"
+        },
+        {
+          "id": "64.progress.selected",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          },
+          "inspect_key": "inspect_progress_selected",
+          "hints_key": "hints_progress_selected"
+        },
+        {
+          "id": "64.progress.prepared",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "inspect_key": "inspect_progress_prepared",
+          "hints_key": "hints_progress_prepared"
+        },
+        {
+          "id": "64.progress.carrying",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "inspect_key": "inspect_progress_carrying",
+          "hints_key": "hints_progress_carrying"
+        },
+        {
+          "id": "64.progress.planted",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "inspect_key": "inspect_progress_planted",
+          "hints_key": "hints_progress_planted"
+        },
+        {
+          "id": "64.progress.finished",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_progress_finished",
+          "hints_key": "hints_progress_finished"
+        }
+      ]
     },
     "hazel_edge": {
       "step": 65,
@@ -3550,7 +3798,203 @@
           "target": "abandoned_beds"
         }
       ],
-      "variants": [],
+      "variants": [
+        {
+          "id": "65.guidance.guide_000",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_000",
+          "hints_key": "hints_guide_000"
+        },
+        {
+          "id": "65.guidance.guide_010",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_010",
+          "hints_key": "hints_guide_010"
+        },
+        {
+          "id": "65.guidance.guide_011",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_011",
+          "hints_key": "hints_guide_011"
+        },
+        {
+          "id": "65.guidance.guide_100",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_100",
+          "hints_key": "hints_guide_100"
+        },
+        {
+          "id": "65.guidance.guide_110",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_110",
+          "hints_key": "hints_guide_110"
+        },
+        {
+          "id": "65.guidance.guide_111",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_111",
+          "hints_key": "hints_guide_111"
+        },
+        {
+          "id": "65.progress.selected",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          },
+          "inspect_key": "inspect_progress_selected",
+          "hints_key": "hints_progress_selected"
+        },
+        {
+          "id": "65.progress.prepared",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "inspect_key": "inspect_progress_prepared",
+          "hints_key": "hints_progress_prepared"
+        },
+        {
+          "id": "65.progress.carrying",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "inspect_key": "inspect_progress_carrying",
+          "hints_key": "hints_progress_carrying"
+        },
+        {
+          "id": "65.progress.planted",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "inspect_key": "inspect_progress_planted",
+          "hints_key": "hints_progress_planted"
+        },
+        {
+          "id": "65.progress.finished",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_progress_finished",
+          "hints_key": "hints_progress_finished"
+        }
+      ],
       "inspect_discovery": {
         "flag": "garden_soil_checked",
         "message": "discovery"
@@ -3604,6 +4048,201 @@
           "inspect_key": "inspect_open",
           "hints_key": "hints_open",
           "media": "scene.overgrown_spring.flowing"
+        },
+        {
+          "id": "66.guidance.guide_000",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_000",
+          "hints_key": "hints_guide_000"
+        },
+        {
+          "id": "66.guidance.guide_010",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_010",
+          "hints_key": "hints_guide_010"
+        },
+        {
+          "id": "66.guidance.guide_011",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_011",
+          "hints_key": "hints_guide_011"
+        },
+        {
+          "id": "66.guidance.guide_100",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_100",
+          "hints_key": "hints_guide_100"
+        },
+        {
+          "id": "66.guidance.guide_110",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_110",
+          "hints_key": "hints_guide_110"
+        },
+        {
+          "id": "66.guidance.guide_111",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_111",
+          "hints_key": "hints_guide_111"
+        },
+        {
+          "id": "66.progress.selected",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          },
+          "inspect_key": "inspect_progress_selected",
+          "hints_key": "hints_progress_selected"
+        },
+        {
+          "id": "66.progress.prepared",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "inspect_key": "inspect_progress_prepared",
+          "hints_key": "hints_progress_prepared"
+        },
+        {
+          "id": "66.progress.carrying",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "inspect_key": "inspect_progress_carrying",
+          "hints_key": "hints_progress_carrying"
+        },
+        {
+          "id": "66.progress.planted",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "inspect_key": "inspect_progress_planted",
+          "hints_key": "hints_progress_planted"
+        },
+        {
+          "id": "66.progress.finished",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_progress_finished",
+          "hints_key": "hints_progress_finished"
         }
       ],
       "inspect_discovery": {
@@ -3638,6 +4277,201 @@
           "inspect_key": "inspect_open",
           "hints_key": "hints_open",
           "media": "scene.stone_watercourse.flowing"
+        },
+        {
+          "id": "67.guidance.guide_000",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_000",
+          "hints_key": "hints_guide_000"
+        },
+        {
+          "id": "67.guidance.guide_010",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_010",
+          "hints_key": "hints_guide_010"
+        },
+        {
+          "id": "67.guidance.guide_011",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_011",
+          "hints_key": "hints_guide_011"
+        },
+        {
+          "id": "67.guidance.guide_100",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_100",
+          "hints_key": "hints_guide_100"
+        },
+        {
+          "id": "67.guidance.guide_110",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_110",
+          "hints_key": "hints_guide_110"
+        },
+        {
+          "id": "67.guidance.guide_111",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_111",
+          "hints_key": "hints_guide_111"
+        },
+        {
+          "id": "67.progress.selected",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          },
+          "inspect_key": "inspect_progress_selected",
+          "hints_key": "hints_progress_selected"
+        },
+        {
+          "id": "67.progress.prepared",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "inspect_key": "inspect_progress_prepared",
+          "hints_key": "hints_progress_prepared"
+        },
+        {
+          "id": "67.progress.carrying",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "inspect_key": "inspect_progress_carrying",
+          "hints_key": "hints_progress_carrying"
+        },
+        {
+          "id": "67.progress.planted",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "inspect_key": "inspect_progress_planted",
+          "hints_key": "hints_progress_planted"
+        },
+        {
+          "id": "67.progress.finished",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_progress_finished",
+          "hints_key": "hints_progress_finished"
         }
       ],
       "inspect_discovery": {
@@ -3656,6 +4490,14 @@
       "text_file": "texts/scenes/068_Солнечная_терраса.json",
       "dark": false,
       "actions": [
+        {
+          "id": "enter_shelter",
+          "target": "garden_shelter",
+          "visible_if": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          }
+        },
         {
           "id": "back_beds",
           "target": "abandoned_beds"
@@ -3700,6 +4542,196 @@
           "text_key": "text_open",
           "inspect_key": "inspect_ready",
           "hints_key": "hints_open"
+        },
+        {
+          "id": "068.13",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "text_key": "text_carried",
+          "inspect_key": "inspect_carried",
+          "hints_key": "hints_carried"
+        },
+        {
+          "id": "068.14",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "text_key": "text_sown",
+          "inspect_key": "inspect_sown",
+          "hints_key": "hints_sown"
+        },
+        {
+          "id": "68.guidance.guide_000",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_000",
+          "hints_key": "hints_guide_000"
+        },
+        {
+          "id": "68.guidance.guide_010",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_010",
+          "hints_key": "hints_guide_010"
+        },
+        {
+          "id": "68.guidance.guide_011",
+          "when": {
+            "all": [
+              {
+                "op": "flag_not_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_011",
+          "hints_key": "hints_guide_011"
+        },
+        {
+          "id": "68.guidance.guide_100",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_100",
+          "hints_key": "hints_guide_100"
+        },
+        {
+          "id": "68.guidance.guide_110",
+          "when": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_soil_checked"
+              },
+              {
+                "op": "flag_set",
+                "flag": "garden_spring_flowing"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "garden_water_checked"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode13_complete"
+              }
+            ]
+          },
+          "inspect_key": "inspect_guide_110",
+          "hints_key": "hints_guide_110"
+        },
+        {
+          "id": "68.progress.selected",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode13_complete"
+          },
+          "inspect_key": "inspect_progress_selected",
+          "hints_key": "hints_progress_selected"
+        },
+        {
+          "id": "68.progress.prepared",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "inspect_key": "inspect_progress_prepared",
+          "hints_key": "hints_progress_prepared"
+        },
+        {
+          "id": "68.progress.carrying",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "inspect_key": "inspect_progress_carrying",
+          "hints_key": "hints_progress_carrying"
+        },
+        {
+          "id": "68.progress.planted",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "inspect_key": "inspect_progress_planted",
+          "hints_key": "hints_progress_planted"
+        },
+        {
+          "id": "68.progress.finished",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "inspect_key": "inspect_progress_finished",
+          "hints_key": "hints_progress_finished"
         }
       ],
       "inspect_discovery": {
@@ -3718,6 +4750,301 @@
           ]
         }
       }
+    },
+    "garden_shelter": {
+      "step": 69,
+      "media": "scene.garden_shelter",
+      "return_media": null,
+      "text_file": "texts/scenes/069_Садовый_навес.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_work",
+          "target": "garden_workbench"
+        },
+        {
+          "id": "enter_leaves",
+          "target": "leaf_yard"
+        },
+        {
+          "id": "enter_bed",
+          "target": "wall_seedbed"
+        },
+        {
+          "id": "back_terrace",
+          "target": "sunny_terrace"
+        }
+      ],
+      "variants": []
+    },
+    "garden_workbench": {
+      "step": 70,
+      "media": "scene.garden_workbench",
+      "return_media": null,
+      "text_file": "texts/scenes/070_Рабочая_ниша.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_shelter",
+          "target": "garden_shelter"
+        }
+      ],
+      "variants": [
+        {
+          "id": "070.10",
+          "when": {
+            "op": "flag_set",
+            "flag": "garden_tools_taken"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "garden_tools_taken",
+        "message": "discovery"
+      }
+    },
+    "leaf_yard": {
+      "step": 71,
+      "media": "scene.leaf_yard",
+      "return_media": null,
+      "text_file": "texts/scenes/071_Листовой_двор.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "back_shelter",
+          "target": "garden_shelter"
+        }
+      ],
+      "variants": [
+        {
+          "id": "071.10",
+          "when": {
+            "op": "flag_set",
+            "flag": "leaf_mould_known"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "leaf_mould_known",
+        "message": "discovery"
+      }
+    },
+    "wall_seedbed": {
+      "step": 72,
+      "media": "scene.wall_seedbed",
+      "return_media": null,
+      "text_file": "texts/scenes/072_Гряда_у_стены.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "prepare_bed",
+          "type": "event",
+          "effects": {
+            "flag": "main_bed_ready"
+          },
+          "message": "prepared",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "garden_tools_taken"
+              },
+              {
+                "op": "flag_set",
+                "flag": "leaf_mould_known"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "main_bed_ready"
+              }
+            ]
+          }
+        },
+        {
+          "id": "enter_basin",
+          "target": "watering_basin"
+        },
+        {
+          "id": "enter_plot",
+          "target": "sowing_plot"
+        },
+        {
+          "id": "back_shelter",
+          "target": "garden_shelter"
+        }
+      ],
+      "variants": [
+        {
+          "id": "072.10",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        },
+        {
+          "id": "072.11",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seed_portion_taken"
+          },
+          "text_key": "text_carried",
+          "inspect_key": "inspect_carried",
+          "hints_key": "hints_carried"
+        },
+        {
+          "id": "072.12",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "text_key": "text_sown",
+          "inspect_key": "inspect_sown",
+          "hints_key": "hints_sown"
+        }
+      ]
+    },
+    "watering_basin": {
+      "step": 73,
+      "media": "scene.watering_basin",
+      "return_media": null,
+      "text_file": "texts/scenes/073_Чаша_для_полива.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "enter_plot",
+          "target": "sowing_plot"
+        },
+        {
+          "id": "back_bed",
+          "target": "wall_seedbed"
+        }
+      ],
+      "variants": [
+        {
+          "id": "073.10",
+          "when": {
+            "op": "flag_set",
+            "flag": "watering_can_taken"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open"
+        }
+      ],
+      "inspect_discovery": {
+        "flag": "watering_can_taken",
+        "message": "discovery"
+      }
+    },
+    "sowing_plot": {
+      "step": 74,
+      "media": "scene.sowing_plot",
+      "return_media": null,
+      "text_file": "texts/scenes/074_Посевная_площадка.json",
+      "dark": false,
+      "actions": [
+        {
+          "id": "sow_seeds",
+          "type": "event",
+          "effects": {
+            "flag": "main_seeds_sown"
+          },
+          "message": "sown",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "main_bed_ready"
+              },
+              {
+                "op": "flag_set",
+                "flag": "main_seed_portion_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "main_seeds_sown"
+              }
+            ]
+          }
+        },
+        {
+          "id": "water_seeds",
+          "type": "event",
+          "effects": {
+            "flag": "episode14_complete"
+          },
+          "message": "watered",
+          "notice_only": true,
+          "visible_if": {
+            "all": [
+              {
+                "op": "flag_set",
+                "flag": "main_seeds_sown"
+              },
+              {
+                "op": "flag_set",
+                "flag": "watering_can_taken"
+              },
+              {
+                "op": "flag_not_set",
+                "flag": "episode14_complete"
+              }
+            ]
+          }
+        },
+        {
+          "id": "back_bed",
+          "target": "wall_seedbed"
+        },
+        {
+          "id": "back_basin",
+          "target": "watering_basin"
+        }
+      ],
+      "variants": [
+        {
+          "id": "074.10",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_bed_ready"
+          },
+          "text_key": "text_ready",
+          "inspect_key": "inspect_ready",
+          "hints_key": "hints_ready"
+        },
+        {
+          "id": "074.11",
+          "when": {
+            "op": "flag_set",
+            "flag": "main_seeds_sown"
+          },
+          "text_key": "text_sown",
+          "inspect_key": "inspect_sown",
+          "hints_key": "hints_sown"
+        },
+        {
+          "id": "074.12",
+          "when": {
+            "op": "flag_set",
+            "flag": "episode14_complete"
+          },
+          "text_key": "text_open",
+          "inspect_key": "inspect_open",
+          "hints_key": "hints_open",
+          "media": "scene.sowing_plot.watered"
+        }
+      ]
     }
   },
   "copy_files": {
